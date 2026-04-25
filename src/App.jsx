@@ -44,12 +44,9 @@ function App() {
               O protocolo de 15 dias para mulheres que cansaram de se moldar para serem escolhidas e decidiram retomar o comando da própria atração.
             </p>
             
-            <div className="hero-visual delay-3">
-              {/* [Placeholder: Vídeo de Vendas ou Imagem] */}
-              <div className="mockup-placeholder main-mockup">
-                <span className="mockup-text">Video / Cover 3D</span>
+              <div className="hero-visual delay-3">
+                <img src="/hero_mockup_1777137906980.png" alt="Magnetus III" className="main-visual-img" />
               </div>
-            </div>
 
             <div className="hero-cta delay-3">
               <a href="#oferta" className="btn btn-primary btn-large">
@@ -90,9 +87,7 @@ function App() {
         <div className="container">
           <div className="solution-grid">
             <div className="solution-image">
-              <div className="mockup-placeholder premium-book">
-                <span className="mockup-text">Capa Vinho e Dourado</span>
-              </div>
+              <img src="/book_cover_1777137926977.png" alt="O Manual da Atração" className="premium-book-img" />
             </div>
             <div className="solution-content">
               <h2 className="section-title text-left">Conheça o Magnetus III: O Manual da Atração para Mulheres.</h2>
@@ -137,7 +132,7 @@ function App() {
           <div className="bonus-grid">
             <div className="bonus-card">
               <div className="bonus-image">
-                <div className="mockup-placeholder bonus-mockup">Bônus 1</div>
+                <img src="/bonus_cover_1777137940296.png" alt="Protocolo Antivalor" className="bonus-img" />
               </div>
               <div className="bonus-info">
                 <h3>Protocolo Antivalor</h3>
@@ -147,7 +142,7 @@ function App() {
 
             <div className="bonus-card">
               <div className="bonus-image">
-                <div className="mockup-placeholder bonus-mockup">Bônus 2</div>
+                <img src="/bonus_cover_1777137940296.png" alt="Efeito Vogue" className="bonus-img" />
               </div>
               <div className="bonus-info">
                 <h3>Efeito Vogue</h3>
@@ -169,7 +164,7 @@ function App() {
 
             <div className="offer-box">
               <div className="offer-mockup">
-                <div className="mockup-placeholder bundle-mockup">Mockup Bundle</div>
+                <img src="/bundle_mockup_1777137954242.png" alt="Magnetus III Bundle Completo" className="bundle-img" />
               </div>
               <div className="offer-pricing">
                 <div className="price-real">De: <span>R$ 441,00</span></div>
@@ -204,7 +199,7 @@ function App() {
         <div className="container">
           <div className="author-grid">
             <div className="author-image-wrapper">
-              <div className="mockup-placeholder author-photo">Sua Foto</div>
+              <img src="/author_photo_1777138062783.png" alt="Autora Silvia Lima" className="author-img" />
             </div>
             <div className="author-content">
               <h2 className="author-name">Sobre a Autora</h2>
