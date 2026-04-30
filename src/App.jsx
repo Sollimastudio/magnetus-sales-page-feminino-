@@ -45,7 +45,7 @@ function App() {
             </p>
             
               <div className="hero-visual delay-3">
-                <img src="/product_combo_new.jpg" alt="Magnetus III" className="main-visual-img" />
+                <img src="/hero-bundle-premium.jpg" alt="Magnetus III" className="main-visual-img" />
               </div>
 
             <div className="hero-cta delay-3">
@@ -87,7 +87,7 @@ function App() {
         <div className="container">
           <div className="solution-grid">
             <div className="solution-image">
-              <img src="/product_combo_new.jpg" alt="O Manual da Atração" className="premium-book-img" />
+              <img src="/product-magnetus-main.jpg" alt="O Manual da Atração" className="premium-book-img" />
             </div>
             <div className="solution-content">
               <h2 className="section-title text-left">Conheça o Magnetus III: O Manual da Atração para Mulheres.</h2>
@@ -132,7 +132,7 @@ function App() {
           <div className="bonus-grid">
             <div className="bonus-card">
               <div className="bonus-image">
-                <img src="/product_combo_new.jpg" alt="Protocolo Antivalor" className="bonus-img" />
+                <img src="/bonus-antivalor-secret.jpg" alt="Protocolo Antivalor" className="bonus-img" />
               </div>
               <div className="bonus-info">
                 <h3>Protocolo Antivalor</h3>
@@ -142,7 +142,7 @@ function App() {
 
             <div className="bonus-card">
               <div className="bonus-image">
-                <img src="/product_combo_new.jpg" alt="Efeito Vogue" className="bonus-img" />
+                <img src="/bonus-antidoto-envelope.jpg" alt="Efeito Vogue" className="bonus-img" />
               </div>
               <div className="bonus-info">
                 <h3>Efeito Vogue</h3>
@@ -164,7 +164,7 @@ function App() {
 
             <div className="offer-box">
               <div className="offer-mockup">
-                <img src="/product_combo_new.jpg" alt="Magnetus III Bundle Completo" className="bundle-img" />
+                <img src="/offer-magnetus-antidoto.jpg" alt="Magnetus III Bundle Completo" className="bundle-img" />
               </div>
               <div className="offer-pricing">
                 <div className="price-real">De: <span>R$ 441,00</span></div>
