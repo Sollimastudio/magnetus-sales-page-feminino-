@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, ShieldCheck, ChevronDown, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, ChevronDown, Sparkles, XCircle, CheckCircle } from 'lucide-react';
 import './App.css';
 
 function App() {
@@ -34,25 +34,25 @@ function App() {
       <header className="hero-section">
         <div className="hero-overlay"></div>
         <div className="container relative z-10">
-          <div className="hero-content animate-fade-in">
-            <div className="logo-placeholder">M-III</div>
-            <h1 className="headline delay-1">
-              O Fim da Era da Espera:<br/>
-              <span className="text-gold">Ative a Presença que Magnetiza sem Esforço.</span>
-            </h1>
-            <p className="sub-headline delay-2">
-              O protocolo de 15 dias para mulheres que cansaram de se moldar para serem escolhidas e decidiram retomar o comando da própria atração.
-            </p>
-            
-              <div className="hero-visual delay-3">
-                <img src="/hero_mockup_1777137906980.png" alt="Magnetus III" className="main-visual-img" />
+          <div className="hero-grid-layout">
+            <div className="hero-content animate-fade-in">
+              <div className="logo-placeholder">M-III</div>
+              <h1 className="headline delay-1">
+                O Fim da Era da Espera:<br/>
+                <span className="text-gold">Ative a Presença que Magnetiza sem Esforço.</span>
+              </h1>
+              <p className="sub-headline delay-2">
+                O protocolo de 15 dias para mulheres que cansaram de se moldar para serem escolhidas e decidiram retomar o comando da própria atração.
+              </p>
+              <div className="hero-cta delay-3">
+                <a href="#oferta" className="btn btn-primary btn-large">
+                  QUERO ATIVAR MEU MAGNETISMO AGORA
+                  <ArrowRight className="icon-right" />
+                </a>
               </div>
-
-            <div className="hero-cta delay-3">
-              <a href="#oferta" className="btn btn-primary btn-large">
-                QUERO ATIVAR MEU MAGNETISMO AGORA
-                <ArrowRight className="icon-right" />
-              </a>
+            </div>
+            <div className="hero-visual-container delay-3">
+              <img src="/hero_premium_clean.png" alt="Magnetus III - Presença Magnética" className="hero-main-img" />
             </div>
           </div>
         </div>
@@ -82,40 +82,87 @@ function App() {
         </div>
       </section>
 
+      {/* SEÇÃO ANTES VS DEPOIS */}
+      <section className="comparison-section">
+        <div className="container">
+          <h2 className="section-title text-center text-white">A Metamorfose da Presença</h2>
+          <div className="comparison-grid">
+            <div className="comparison-card before">
+              <div className="card-header">
+                <XCircle className="icon-error" />
+                <h3>Antes do Protocolo</h3>
+              </div>
+              <ul className="comparison-list">
+                <li>Estado de hipervigilância crônica</li>
+                <li>Busca constante por aprovação externa</li>
+                <li>Comunicação que emite carência e insegurança</li>
+                <li>Ser a "mulher legal" que é sempre deixada para depois</li>
+                <li>Sentimento de insuficiência e invisibilidade</li>
+              </ul>
+            </div>
+            <div className="comparison-card after">
+              <div className="card-header">
+                <CheckCircle className="icon-success" />
+                <h3>Depois do Magnetus III</h3>
+              </div>
+              <ul className="comparison-list">
+                <li>Soberania biológica e regulação nervosa</li>
+                <li>Valor social inquestionável e autêntico</li>
+                <li>Magnetismo como consequência biológica</li>
+                <li>Tornar-se o destino final: a Fonte</li>
+                <li>Presença que governa e atrai sem esforço</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. A SOLUÇÃO (Apresentação do Produto) */}
       <section className="solution-section">
         <div className="container">
-          <div className="solution-grid">
-            <div className="solution-image">
-              <img src="/book_cover_1777137926977.png" alt="O Manual da Atração" className="premium-book-img" />
-            </div>
-            <div className="solution-content">
-              <h2 className="section-title text-left">Conheça o Magnetus III: O Manual da Atração para Mulheres.</h2>
-              <p className="solution-description">
-                Este não é um livro de "dicas de paquera". É um protocolo de 15 dias baseado em neuro-persuasão para você <strong>habitar a si mesma</strong>. Você vai aprender a sair do modo "Espera" e entrar no modo "Presença".
-              </p>
-              
-              <h3 className="list-title">O que você vai dominar em 15 dias:</h3>
-              <ul className="benefits-list">
-                <li>
-                  <CheckCircle2 className="check-icon" />
-                  <span>Como <strong>desinstalar o sistema de busca por aprovação</strong>.</span>
-                </li>
-                <li>
-                  <CheckCircle2 className="check-icon" />
-                  <span>A ciência de se apresentar sem "doses" (<strong>ser inteira</strong>).</span>
-                </li>
-                <li>
-                  <CheckCircle2 className="check-icon" />
-                  <span><strong>O fim da necessidade</strong> de ser "a mulher legal" que ninguém valoriza.</span>
-                </li>
-              </ul>
-              
-              <div className="mt-8">
-                <a href="#oferta" className="btn btn-primary">
-                  QUERO ENTRAR NO MODO PRESENÇA
-                </a>
+          <div className="section-header text-center mb-16">
+            <h2 className="section-title">O Sistema Operacional de Alto Valor</h2>
+            <p className="section-subtitle">A solução completa que une a poda estratégica à construção de poder.</p>
+          </div>
+
+          <div className="products-detailed-grid">
+            {/* Ebook 1 */}
+            <div className="product-detail-card">
+              <div className="product-image">
+                <img src="/book_cover_1777137926977.png" alt="Magnetus III" className="premium-book-img" />
               </div>
+              <div className="product-info">
+                <span className="product-tag">Manual Principal</span>
+                <h3>MAGNETUS III: A Engenharia da Presença</h3>
+                <p>
+                  O protocolo de 15 dias para instalar soberania biológica. Este manual de engenharia comportamental ensina a regular o sistema nervoso para <strong>projectar um valor social inquestionável</strong>. É a ferramenta definitiva para quem deseja deixar de ser um "caçador" e tornar-se o destino final: a Fonte.
+                </p>
+              </div>
+            </div>
+
+            {/* Ebook 2 */}
+            <div className="product-detail-card reverse">
+              <div className="product-image">
+                <img src="/antivalor_cover_premium.png" alt="Antivalor" className="premium-book-img" />
+              </div>
+              <div className="product-info">
+                <span className="product-tag">O Diagnóstico</span>
+                <h3>ANTIVALOR: O Extermínio da Sabotagem</h3>
+                <p>
+                  O diagnóstico brutal dos pontos cegos que repelem os teus resultados. Este guia identifica e elimina os <strong>vazamentos invisíveis de insegurança</strong> e reatividade que comunicam carência. É o antídoto necessário para remover o "travão de mão" que sabota o teu magnetismo antes de abrires a boca.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="combo-highlight-box">
+            <div className="combo-content">
+              <Sparkles className="text-gold mb-4" size={32} />
+              <h3>O COMBO: Equilíbrio Perfeito</h3>
+              <p>
+                Enquanto o <em>Antivalor</em> limpa o terreno e estanca a perda de autoridade, o <em>Magnetus III</em> edifica a estrutura da presença magnética. É o equilíbrio perfeito entre parar de errar e começar a dominar.
+              </p>
+              <p className="result-highlight">Atração real como consequência biológica, não como esforço.</p>
             </div>
           </div>
         </div>
@@ -126,7 +173,7 @@ function App() {
         <div className="container">
           <div className="section-header text-center">
             <Sparkles className="section-icon mx-auto" />
-            <h2 className="section-title text-white">Você não vai trilhar esse caminho sozinha.</h2>
+            <h2 className="section-title text-white">Bônus Exclusivos de Ativação</h2>
           </div>
           
           <div className="bonus-grid">
@@ -174,9 +221,9 @@ function App() {
                   <span className="avista">ou R$ 97,00 à vista</span>
                 </div>
                 
-                <button className="btn btn-primary btn-block btn-buy pulse-animation">
+                <a href="https://pay.kiwify.com.br/m8cGccz" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-block btn-buy pulse-animation">
                   QUERO GARANTIR MINHA VAGA AGORA
-                </button>
+                </a>
                 <div className="secure-checkout">
                   <ShieldCheck size={16} /> Compra 100% Segura e Criptografada
                 </div>
@@ -199,33 +246,33 @@ function App() {
         <div className="container">
           <div className="author-grid">
             <div className="author-image-wrapper">
-              <img src="/author_photo_1777138062783.png" alt="Autora Sol Lima" className="author-img" />
+              <img src="/author_sol_lima.jpg" alt="Autora Sol Lima" className="author-img" />
             </div>
             <div className="author-content">
               <h2 className="author-name">Sol Lima</h2>
-              <h3 className="author-subtitle text-gold">Neurociência. Ressurreição. Soberania.</h3>
+              <h3 className="author-subtitle text-gold">Estrategista em Neurociência & Comportamento</h3>
               
               <div className="author-bio">
-                <p className="author-highlight"><strong>Eu sobrevivi ao que chamo de Feminicídio Emocional.</strong></p>
+                <p className="author-highlight"><strong>Especialista em verdades que curam (depois de arder muito).</strong></p>
                 
-                <p>Por anos, eu fui a sombra de quem eu deveria ser. Vivi em estado de hipervigilância crônica, onde cada passo meu era calculado para não desagradar, para não ser notada, para não incomodar. Minha voz era um sussurro abafado por uma religiosidade que me ensinou a anular o "eu".</p>
+                <p>Sol Lima é uma estrategista e consultora especializada em neurociência aplicada e ciências comportamentais. O seu trabalho foca-se no desenvolvimento de metodologias de alto impacto, como o protocolo <strong>Magnetus III</strong> e o método <strong>Posicione-se™</strong>, que utilizam a neurobiologia — especificamente a regulação do sistema nervoso e do nervo vago — para reprogramação emocional e posicionamento de autoridade.</p>
                 
-                <p>Eu não tinha amor-próprio. Minha autoestima era um deserto. Mas a dor me levou ao estudo. Mergulhei na neurociência para entender por que meu cérebro me mantinha refém do medo.</p>
+                <p>A sua identidade profissional é marcada por uma abordagem "visceral" e sofisticada, fundamentada no que descreve como um "doutorado no campo de batalha", transformando vivências complexas em ferramentas estratégicas para o desenvolvimento humano e social.</p>
                 
                 <div className="author-quote">
-                  <p>"No meu TCC sobre Presença e Magnetismo, descobri que a atração não é um dom místico, mas um padrão de sinais químicos e comportamentais que qualquer mulher pode ativar."</p>
+                  <p>"O meu foco está na intersecção entre a biologia do comportamento e estratégias de marketing magnético, visando resultados de alta performance e a construção de marcas pessoais dominantes."</p>
                 </div>
                 
-                <p>Hoje, como Sol Lima, eu não apenas recuperei minha luz; eu criei o Protocolo Magnetus para que você não precise levar décadas para fazer o mesmo. É a ciência da ressurreição da sua presença.</p>
+                <p>No campo da tecnologia, Sol Lima dedica-se à criação de assistentes de inteligência artificial personalizados e à produção de conteúdos digitais com uma estética premium e de "luxo editorial".</p>
                 
                 <div className="author-pillars">
                   <div className="pillar">
-                    <h4 className="text-gold">Neurociência</h4>
-                    <p>Base científica em cada técnica.</p>
+                    <h4 className="text-gold">Neurobiologia</h4>
+                    <p>Regulação do sistema nervoso para autoridade.</p>
                   </div>
                   <div className="pillar">
-                    <h4 className="text-gold">Blindagem</h4>
-                    <p>Proteção contra a autoanulação.</p>
+                    <h4 className="text-gold">Luxo Editorial</h4>
+                    <p>Estética premium e posicionamento dominante.</p>
                   </div>
                 </div>
               </div>
