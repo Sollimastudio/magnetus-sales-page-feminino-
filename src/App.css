@@ -294,15 +294,51 @@
   font-family: var(--font-accent);
   font-size: 2.5rem;
   color: var(--color-bordeaux);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 0.25rem;
+}
+.author-subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.author-bio {
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+.author-bio p {
+  margin-bottom: 1rem;
+}
+.author-highlight {
+  color: var(--color-bordeaux-dark);
+  font-size: 1.2rem;
 }
 .author-quote {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-style: italic;
   position: relative;
   padding-left: 1.5rem;
   border-left: 3px solid var(--color-champagne);
-  color: var(--color-text-muted);
+  color: var(--color-bordeaux-dark);
+  margin: 1.5rem 0;
+}
+.author-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eaeaea;
+}
+.pillar h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+.pillar p {
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 /* 7. FAQ Section */

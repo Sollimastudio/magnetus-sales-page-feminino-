@@ -45,7 +45,7 @@ function App() {
             </p>
             
               <div className="hero-visual delay-3">
-                <img src="/hero-bundle-premium.jpg" alt="Magnetus III" className="main-visual-img" />
+                <img src="/hero_mockup_1777137906980.png" alt="Magnetus III" className="main-visual-img" />
               </div>
 
             <div className="hero-cta delay-3">
@@ -87,7 +87,7 @@ function App() {
         <div className="container">
           <div className="solution-grid">
             <div className="solution-image">
-              <img src="/product-magnetus-main.jpg" alt="O Manual da Atração" className="premium-book-img" />
+              <img src="/book_cover_1777137926977.png" alt="O Manual da Atração" className="premium-book-img" />
             </div>
             <div className="solution-content">
               <h2 className="section-title text-left">Conheça o Magnetus III: O Manual da Atração para Mulheres.</h2>
@@ -142,7 +142,7 @@ function App() {
 
             <div className="bonus-card">
               <div className="bonus-image">
-                <img src="/bonus-antidoto-envelope.jpg" alt="Efeito Vogue" className="bonus-img" />
+                <img src="/bonus_cover_1777137940296.png" alt="Efeito Vogue" className="bonus-img" />
               </div>
               <div className="bonus-info">
                 <h3>Efeito Vogue</h3>
@@ -164,7 +164,7 @@ function App() {
 
             <div className="offer-box">
               <div className="offer-mockup">
-                <img src="/offer-magnetus-antidoto.jpg" alt="Magnetus III Bundle Completo" className="bundle-img" />
+                <img src="/bundle_mockup_1777137954242.png" alt="Magnetus III Bundle Completo" className="bundle-img" />
               </div>
               <div className="offer-pricing">
                 <div className="price-real">De: <span>R$ 441,00</span></div>
@@ -199,14 +199,35 @@ function App() {
         <div className="container">
           <div className="author-grid">
             <div className="author-image-wrapper">
-              <img src="/author_sol_lima.jpg" alt="Autora Sol Lima" className="author-img" />
+              <img src="/author_photo_1777138062783.png" alt="Autora Sol Lima" className="author-img" />
             </div>
             <div className="author-content">
-              <h2 className="author-name">Sobre a Autora</h2>
-              <div className="author-quote">
-                <p>
-                  "Eu já estive onde você está. Eu criei o Magnetus III porque entendi que a liberdade só é real quando somos donas da nossa própria atração. Não se trata de manipulação, trata-se de resgatar quem você nasceu para ser antes que o mundo te dissesse para ser menor."
-                </p>
+              <h2 className="author-name">Sol Lima</h2>
+              <h3 className="author-subtitle text-gold">Neurociência. Ressurreição. Soberania.</h3>
+              
+              <div className="author-bio">
+                <p className="author-highlight"><strong>Eu sobrevivi ao que chamo de Feminicídio Emocional.</strong></p>
+                
+                <p>Por anos, eu fui a sombra de quem eu deveria ser. Vivi em estado de hipervigilância crônica, onde cada passo meu era calculado para não desagradar, para não ser notada, para não incomodar. Minha voz era um sussurro abafado por uma religiosidade que me ensinou a anular o "eu".</p>
+                
+                <p>Eu não tinha amor-próprio. Minha autoestima era um deserto. Mas a dor me levou ao estudo. Mergulhei na neurociência para entender por que meu cérebro me mantinha refém do medo.</p>
+                
+                <div className="author-quote">
+                  <p>"No meu TCC sobre Presença e Magnetismo, descobri que a atração não é um dom místico, mas um padrão de sinais químicos e comportamentais que qualquer mulher pode ativar."</p>
+                </div>
+                
+                <p>Hoje, como Sol Lima, eu não apenas recuperei minha luz; eu criei o Protocolo Magnetus para que você não precise levar décadas para fazer o mesmo. É a ciência da ressurreição da sua presença.</p>
+                
+                <div className="author-pillars">
+                  <div className="pillar">
+                    <h4 className="text-gold">Neurociência</h4>
+                    <p>Base científica em cada técnica.</p>
+                  </div>
+                  <div className="pillar">
+                    <h4 className="text-gold">Blindagem</h4>
+                    <p>Proteção contra a autoanulação.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
