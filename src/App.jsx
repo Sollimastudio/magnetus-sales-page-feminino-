@@ -52,7 +52,7 @@ function App() {
               </div>
             </div>
             <div className="hero-visual-container delay-3">
-              <img src="/hero_premium_clean.png" alt="Magnetus III - Presença Magnética" className="hero-main-img" />
+              <img src="/capa_ebook_magnetus.jpeg" alt="Magnetus III - Presença Magnética" className="hero-main-img" />
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ function App() {
             {/* Ebook 1 */}
             <div className="product-detail-card">
               <div className="product-image">
-                <img src="/book_cover_1777137926977.png" alt="Magnetus III" className="premium-book-img" />
+                <img src="/capa_ebook_magnetus.jpeg" alt="Magnetus III" className="premium-book-img" />
               </div>
               <div className="product-info">
                 <span className="product-tag">Manual Principal</span>
@@ -189,7 +189,7 @@ function App() {
 
             <div className="bonus-card">
               <div className="bonus-image">
-                <img src="/bonus_cover_1777137940296.png" alt="Efeito Vogue" className="bonus-img" />
+                <img src="/capa_ebook_antidoto.jpg" alt="Efeito Vogue" className="bonus-img" />
               </div>
               <div className="bonus-info">
                 <h3>Efeito Vogue</h3>
@@ -211,7 +211,7 @@ function App() {
 
             <div className="offer-box">
               <div className="offer-mockup">
-                <img src="/bundle_mockup_1777137954242.png" alt="Magnetus III Bundle Completo" className="bundle-img" />
+                <img src="/oferta_combo_ebooks.jpg" alt="Magnetus III Bundle Completo" className="bundle-img" />
               </div>
               <div className="offer-pricing">
                 <div className="price-real">De: <span>R$ 441,00</span></div>
@@ -246,7 +246,7 @@ function App() {
         <div className="container">
           <div className="author-grid">
             <div className="author-image-wrapper">
-              <img src="/author_sol_lima.jpg" alt="Autora Sol Lima" className="author-img" />
+              <img src="/autora_sol_lima.jpg" alt="Autora Sol Lima" className="author-img" />
             </div>
             <div className="author-content">
               <h2 className="author-name">Sol Lima</h2>
