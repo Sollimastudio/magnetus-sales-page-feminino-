@@ -1,6 +1,8 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, ShieldCheck, ChevronDown, Sparkles, XCircle, CheckCircle } from 'lucide-react';
+import { ArrowRight, BadgeCheck, ChevronDown, LockKeyhole, Sparkles, XCircle, CheckCircle } from 'lucide-react';
 import './App.css';
+
+const checkoutUrl = 'https://pay.kiwify.com.br/m8cGccz';
 
 function App() {
   const [openFaq, setOpenFaq] = React.useState(null);
@@ -30,16 +32,30 @@ function App() {
 
   return (
     <div className="app">
-      {/* 1. CABEÇALHO (A Promessa Irresistível) */}
-      {/* 1. CABEÇALHO (A Promessa Irresistível) */}
-      <header className="hero-section" style={{ padding: 0, backgroundColor: '#000', display: 'flex', justifyContent: 'center' }}>
-        <a href="https://pay.kiwify.com.br/m8cGccz" target="_blank" rel="noopener noreferrer" style={{ display: 'block', width: '100%', maxWidth: '800px' }}>
+      <header className="hero-section">
+        <div className="hero-shell">
+          <div className="hero-badge">
+            <Sparkles size={18} />
+            Protocolo digital de ativação feminina
+          </div>
+          <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="hero-image-link" aria-label="Comprar Magnetus III">
           <img 
             src="/images/magnetus_feminina_hero.png" 
             alt="Magnetus III - Ative sua Presença" 
-            style={{ width: '100%', height: 'auto', display: 'block' }} 
+              className="hero-image"
           />
         </a>
+          <div className="hero-actions">
+            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large pulse-animation">
+              Quero ativar minha presença
+              <ArrowRight className="icon-right" size={22} />
+            </a>
+            <p className="secure-note">
+              <LockKeyhole size={16} />
+              Compra segura, acesso imediato e discreto
+            </p>
+          </div>
+        </div>
       </header>
 
       {/* 2. O DEDO NA FERIDA (Conexão Emocional) */}
@@ -187,13 +203,21 @@ function App() {
       {/* 5. QUEBRA DE OBJEÇÕES E ANCORAGEM (A Oferta) */}
       <section id="oferta" className="offer-section">
         <div className="container">
-          <div className="offer-wrapper" style={{ padding: 0, backgroundColor: 'transparent', display: 'flex', justifyContent: 'center' }}>
-            <a href="https://pay.kiwify.com.br/m8cGccz" target="_blank" rel="noopener noreferrer" style={{ display: 'block', width: '100%', maxWidth: '800px' }}>
+          <div className="offer-wrapper">
+            <div className="offer-kicker">
+              <BadgeCheck size={20} />
+              Oferta especial do combo
+            </div>
+            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="offer-image-link" aria-label="Comprar combo Magnetus III">
               <img 
                 src="/images/oferta_combo_nova.jpg" 
                 alt="Magnetus III - Oferta Especial" 
-                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px' }} 
+                className="offer-image"
               />
+            </a>
+            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large offer-cta">
+              Garantir meu acesso agora
+              <ArrowRight className="icon-right" size={22} />
             </a>
           </div>
         </div>
@@ -245,10 +269,12 @@ function App() {
           <h2 className="section-title text-center">Ainda tem dúvidas?</h2>
           <div className="faq-list">
             {faqs.map((faq, index) => (
-              <div 
+              <button
+                type="button"
                 key={index} 
                 className={`faq-item ${openFaq === index ? 'active' : ''}`}
                 onClick={() => toggleFaq(index)}
+                aria-expanded={openFaq === index}
               >
                 <div className="faq-question">
                   <h4>{faq.question}</h4>
@@ -257,11 +283,16 @@ function App() {
                 <div className="faq-answer">
                   <p>{faq.answer}</p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="sticky-cta">
+        Ativar agora
+        <ArrowRight size={18} />
+      </a>
 
       <footer className="footer">
         <div className="container">
