@@ -31,31 +31,15 @@ function App() {
   return (
     <div className="app">
       {/* 1. CABEÇALHO (A Promessa Irresistível) */}
-      <header className="hero-section">
-        <div className="hero-overlay"></div>
-        <div className="container relative z-10">
-          <div className="hero-grid-layout">
-            <div className="hero-content animate-fade-in">
-              <div className="logo-placeholder">M-III</div>
-              <h1 className="headline delay-1">
-                O Fim da Era da Espera:<br/>
-                <span className="text-gold">Ative a Presença que Magnetiza sem Esforço.</span>
-              </h1>
-              <p className="sub-headline delay-2">
-                O protocolo de 15 dias para mulheres que cansaram de se moldar para serem escolhidas e decidiram retomar o comando da própria atração.
-              </p>
-              <div className="hero-cta delay-3">
-                <a href="https://pay.kiwify.com.br/m8cGccz" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large">
-                  QUERO ATIVAR MEU MAGNETISMO AGORA
-                  <ArrowRight className="icon-right" />
-                </a>
-              </div>
-            </div>
-            <div className="hero-visual-container delay-3">
-              <img src="/images/capa_ebook_magnetus.jpeg" alt="Magnetus III - Presença Magnética" className="hero-main-img" />
-            </div>
-          </div>
-        </div>
+      {/* 1. CABEÇALHO (A Promessa Irresistível) */}
+      <header className="hero-section" style={{ padding: 0, backgroundColor: '#000', display: 'flex', justifyContent: 'center' }}>
+        <a href="https://pay.kiwify.com.br/m8cGccz" target="_blank" rel="noopener noreferrer" style={{ display: 'block', width: '100%', maxWidth: '800px' }}>
+          <img 
+            src="/images/magnetus_feminina_hero.png" 
+            alt="Magnetus III - Ative sua Presença" 
+            style={{ width: '100%', height: 'auto', display: 'block' }} 
+          />
+        </a>
       </header>
 
       {/* 2. O DEDO NA FERIDA (Conexão Emocional) */}
