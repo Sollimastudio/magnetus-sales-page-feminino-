@@ -187,40 +187,14 @@ function App() {
       {/* 5. QUEBRA DE OBJEÇÕES E ANCORAGEM (A Oferta) */}
       <section id="oferta" className="offer-section">
         <div className="container">
-          <div className="offer-wrapper">
-            <h2 className="section-title">Quanto vale nunca mais se sentir "insuficiente"?</h2>
-            <p className="offer-copy">
-              Você poderia gastar milhares de reais em terapia, roupas novas ou jantares para tentar atrair atenção. Ou você pode investir menos que o valor de uma manicure para <strong>mudar sua identidade para sempre</strong>.
-            </p>
-
-            <div className="offer-box">
-              <div className="offer-mockup">
-                <img src="/images/oferta_combo_ebooks.jpg" alt="Magnetus III Bundle Completo" className="bundle-img" />
-              </div>
-              <div className="offer-pricing">
-                <div className="price-real">De: <span>R$ 441,00</span></div>
-                <div className="price-offer">
-                  <span className="por">Por apenas</span>
-                  <div className="price-huge">12x de R$ 9,74</div>
-                  <span className="avista">ou R$ 97,00 à vista</span>
-                </div>
-                
-                <a href="https://pay.kiwify.com.br/m8cGccz" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-block btn-buy pulse-animation">
-                  QUERO GARANTIR MINHA VAGA AGORA
-                </a>
-                <div className="secure-checkout">
-                  <ShieldCheck size={16} /> Compra 100% Segura e Criptografada
-                </div>
-              </div>
-            </div>
-
-            <div className="guarantee-box">
-              <div className="guarantee-icon">🛡️</div>
-              <div className="guarantee-text">
-                <h3>GARANTIA DE 7 DIAS</h3>
-                <p>Se em uma semana você não sentir seu poder voltando, eu devolvo cada centavo. Sem perguntas, sem burocracia. O risco é todo meu.</p>
-              </div>
-            </div>
+          <div className="offer-wrapper" style={{ padding: 0, backgroundColor: 'transparent', display: 'flex', justifyContent: 'center' }}>
+            <a href="https://pay.kiwify.com.br/m8cGccz" target="_blank" rel="noopener noreferrer" style={{ display: 'block', width: '100%', maxWidth: '800px' }}>
+              <img 
+                src="/images/oferta_combo_nova.jpg" 
+                alt="Magnetus III - Oferta Especial" 
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px' }} 
+              />
+            </a>
           </div>
         </div>
       </section>
