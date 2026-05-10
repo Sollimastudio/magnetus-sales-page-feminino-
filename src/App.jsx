@@ -143,7 +143,7 @@ function App() {
             {/* Ebook 2 */}
             <div className="product-detail-card reverse">
               <div className="product-image">
-                <img src="/images/antivalor_cover_premium.png" alt="Antivalor" className="premium-book-img" />
+                <img src="/images/capa_ebook_antidoto.jpg" alt="Antidoto do Antivalor" className="premium-book-img" />
               </div>
               <div className="product-info">
                 <span className="product-tag">O Diagnóstico</span>
@@ -156,6 +156,9 @@ function App() {
           </div>
           
           <div className="combo-highlight-box">
+            <div className="combo-image-wrap">
+              <img src="/images/bonus-antivalor-secret.jpg" alt="Combo Magnetus III e Antidoto do Antivalor" className="combo-image" />
+            </div>
             <div className="combo-content">
               <Sparkles className="text-gold mb-4" size={32} />
               <h3>O COMBO: Equilíbrio Perfeito</h3>
@@ -179,7 +182,7 @@ function App() {
           <div className="bonus-grid">
             <div className="bonus-card">
               <div className="bonus-image">
-                <img src="/images/bonus-antivalor-secret.jpg" alt="Protocolo Antivalor" className="bonus-img" />
+                <img src="/images/antivalor_cover_premium.png" alt="Protocolo Antivalor" className="bonus-img" />
               </div>
               <div className="bonus-info">
                 <h3>Protocolo Antivalor</h3>
