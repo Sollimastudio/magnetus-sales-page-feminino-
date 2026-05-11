@@ -309,10 +309,6 @@ function App() {
                 className="offer-image"
               />
             </a>
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large offer-cta">
-              Garantir meu acesso agora
-              <ArrowRight className="icon-right" size={22} />
-            </a>
             <div className="purchase-clarity">
               <div>
                 <ShieldCheck size={22} />

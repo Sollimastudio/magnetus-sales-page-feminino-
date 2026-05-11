@@ -797,11 +797,12 @@
 .deliverables-grid {
   display: grid;
   gap: 1rem;
+  min-width: 0;
 }
 
 .deliverable-item {
   display: grid;
-  grid-template-columns: 36px 1fr;
+  grid-template-columns: 40px minmax(0, 1fr);
   column-gap: 1rem;
   padding: 1.15rem 0;
   border-bottom: 1px solid rgba(131, 24, 67, 0.1);
@@ -824,6 +825,8 @@
 
 .deliverable-item p {
   color: var(--color-text-muted);
+  max-width: 62ch;
+  overflow-wrap: anywhere;
 }
 
 .purchase-clarity {
