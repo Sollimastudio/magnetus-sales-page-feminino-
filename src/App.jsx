@@ -46,10 +46,6 @@ function App() {
           />
         </a>
           <div className="hero-actions">
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large pulse-animation">
-              Quero ativar minha presença
-              <ArrowRight className="icon-right" size={22} />
-            </a>
             <p className="secure-note">
               <LockKeyhole size={16} />
               Compra segura, acesso imediato e discreto
@@ -166,38 +162,6 @@ function App() {
                 Enquanto o <em>Antivalor</em> limpa o terreno e estanca a perda de autoridade, o <em>Magnetus III</em> edifica a estrutura da presença magnética. É o equilíbrio perfeito entre parar de errar e começar a dominar.
               </p>
               <p className="result-highlight">Atração real como consequência biológica, não como esforço.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. O "PUXA TAPETE" (Os Bônus Inesperados) */}
-      <section className="bonus-section">
-        <div className="container">
-          <div className="section-header text-center">
-            <Sparkles className="section-icon mx-auto" />
-            <h2 className="section-title text-white">Bônus Exclusivos de Ativação</h2>
-          </div>
-          
-          <div className="bonus-grid">
-            <div className="bonus-card">
-              <div className="bonus-image">
-                <img src="/images/antivalor_cover_premium.png" alt="Protocolo Antivalor" className="bonus-img" />
-              </div>
-              <div className="bonus-info">
-                <h3>Protocolo Antivalor</h3>
-                <p><strong>O Guia do que NÃO fazer.</strong> Identifique os 5 comportamentos que geram repulsa imediata no homem que você deseja.</p>
-              </div>
-            </div>
-
-            <div className="bonus-card">
-              <div className="bonus-image">
-                <img src="/images/capa_ebook_antidoto.jpg" alt="Efeito Vogue" className="bonus-img" />
-              </div>
-              <div className="bonus-info">
-                <h3>Efeito Vogue</h3>
-                <p><strong>O manual da metamorfose.</strong> Como fazer ele se reapaixonar pela sua nova versão — a versão que ele não consegue ignorar.</p>
-              </div>
             </div>
           </div>
         </div>

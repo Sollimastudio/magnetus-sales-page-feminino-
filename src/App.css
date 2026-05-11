@@ -124,8 +124,15 @@
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.95rem;
+  min-height: 46px;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid rgba(212, 175, 55, 0.36);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-champagne-light);
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
 }
 .hero-overlay {
   position: absolute;
@@ -228,52 +235,12 @@
   margin-top: 2px;
 }
 
-/* 4. Bonus Section */
-.bonus-section {
-  background:
-    linear-gradient(135deg, var(--color-bordeaux-dark), #260711);
-  color: var(--color-text-light);
-  padding: var(--spacing-xxl) 0;
-}
-.bonus-section .section-title {
-  color: var(--color-champagne-light);
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
-}
 .section-icon {
   color: var(--color-champagne);
   width: 48px;
   height: 48px;
   margin-bottom: var(--spacing-sm);
 }
-.bonus-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-lg);
-}
-@media (min-width: 768px) {
-  .bonus-grid { grid-template-columns: 1fr 1fr; }
-}
-.bonus-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-md);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-}
-.bonus-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(212, 175, 55, 0.5);
-}
-.bonus-image { margin-bottom: var(--spacing-sm); }
-.bonus-info h3 {
-  font-size: 1.5rem;
-  color: var(--color-champagne);
-  margin-bottom: 0.5rem;
-}
-.bonus-info p { color: rgba(255,255,255,0.8); }
 
 /* 5. Offer Section */
 .offer-section {
@@ -662,7 +629,6 @@
   .pain-section,
   .comparison-section,
   .solution-section,
-  .bonus-section,
   .offer-section,
   .author-section,
   .faq-section {
