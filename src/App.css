@@ -814,19 +814,23 @@
 
 .deliverable-item svg {
   color: var(--color-bordeaux);
+  grid-row: 1 / span 2;
   margin-top: 0.1rem;
 }
 
 .deliverable-item h3 {
   color: var(--color-bordeaux-dark);
+  grid-column: 2;
   font-size: 1.18rem;
   margin-bottom: 0.35rem;
 }
 
 .deliverable-item p {
   color: var(--color-text-muted);
+  grid-column: 2;
   max-width: 62ch;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .purchase-clarity {

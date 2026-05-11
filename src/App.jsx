@@ -13,37 +13,47 @@ const fitPoints = [
 
 const methodSteps = [
   {
-    label: 'Dias 1 a 5',
-    title: 'Corte do Antivalor',
-    text: 'Identifique os sinais que vazam insegurança: urgência, explicação excessiva, espera passiva e necessidade de resposta.'
+    label: 'Dia 0',
+    title: 'Anamnese e restart da respiração',
+    text: 'Você responde a anamnese inicial e aprende a ativar o restart da respiração, o primeiro comando para sair do automático emocional.'
   },
   {
-    label: 'Dias 6 a 10',
-    title: 'Regulação e presença',
-    text: 'Reorganize suas respostas emocionais para não agir no pico da ansiedade nem entregar poder por impulso.'
+    label: 'Dias 1 a 7',
+    title: 'Fase 1: magnetismo interior',
+    text: 'A primeira fase trata o campo interno: ansiedade, reatividade, escassez, autoabandono e o padrão de correr atrás.'
   },
   {
-    label: 'Dias 11 a 15',
-    title: 'Posicionamento magnético',
-    text: 'Aplique linguagem, silêncio estratégico e presença social para ser percebida como escolha de alto valor.'
+    label: 'Dia 8',
+    title: 'Transição: Matemática do Perdão',
+    text: 'O oitavo dia marca a passagem entre a reconstrução interna e a projeção externa, usando a Matemática do Perdão como virada de chave.'
+  },
+  {
+    label: 'Dias 8 a 15',
+    title: 'Fase 2: magnetismo externo',
+    text: 'A segunda fase aplica presença, postura, linguagem, silêncio estratégico e valor percebido na forma como você se posiciona no mundo.'
   }
 ];
 
 const deliverables = [
   {
     icon: FileText,
-    title: 'Manual Magnetus III',
-    text: 'O protocolo principal de 15 dias para reconstruir presença, valor percebido e domínio emocional.'
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Antídoto do Antivalor',
-    text: 'O diagnóstico dos comportamentos que sabotam sua autoridade antes mesmo de qualquer conversa.'
+    title: 'Magnetus principal',
+    text: 'O manual central do método, com a estrutura completa para reconstruir presença, valor percebido e domínio emocional.'
   },
   {
     icon: Clock3,
-    title: 'Acesso imediato',
-    text: 'Material digital liberado após a confirmação do pagamento, para começar sem esperar.'
+    title: 'Manual Dia 0',
+    text: 'A abertura do protocolo: anamnese inicial e ativação do restart da respiração para preparar o sistema antes da fase 1.'
+  },
+  {
+    icon: BadgeCheck,
+    title: 'Protocolo Matemática do Perdão',
+    text: 'O material de transição do Dia 8, criado para fechar ciclos internos antes da entrada no magnetismo externo.'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Bônus Antídoto Antivalor',
+    text: 'O diagnóstico dos comportamentos que vazam insegurança e sabotam sua autoridade antes mesmo de qualquer conversa.'
   }
 ];
 
@@ -73,7 +83,7 @@ function App() {
     },
     {
       question: "O que exatamente eu recebo?",
-      answer: "Você recebe o material digital do Magnetus III, o Antídoto do Antivalor e os conteúdos indicados na oferta. A proposta é entregar um caminho de aplicação, não apenas leitura passiva."
+      answer: "Você recebe o Magnetus principal, o Manual Dia 0, o protocolo Matemática do Perdão e o bônus Antídoto Antivalor. A proposta é entregar um caminho de aplicação, não apenas leitura passiva."
     },
     {
       question: "Quanto tempo preciso por dia?",
@@ -201,7 +211,7 @@ function App() {
               <span className="eyebrow eyebrow-light">Como você usa</span>
               <h2 className="section-title text-white">Um protocolo de 15 dias para trocar ansiedade por direção.</h2>
               <p>
-                O caminho precisa ser claro: primeiro você corta o vazamento de valor, depois regula a resposta emocional, então aplica presença.
+                O processo começa no Dia 0, com anamnese e restart da respiração. Depois vem a fase de magnetismo interior, a transição da Matemática do Perdão e a fase de magnetismo externo.
               </p>
               <a href="#oferta" className="method-link">
                 Ver oferta completa
@@ -276,9 +286,9 @@ function App() {
           <div className="deliverables-section">
             <div className="deliverables-copy">
               <span className="eyebrow">O que chega para você</span>
-              <h2>O produto deixa de ser abstrato quando você entende o papel de cada peça.</h2>
+              <h2>Você recebe quatro peças para atravessar o protocolo com começo, meio e aplicação.</h2>
               <p>
-                A compra reúne diagnóstico, protocolo e direção prática. Isso reduz a dúvida mais comum antes da decisão: "vou saber por onde começar?"
+                Cada material tem uma função dentro da jornada: preparar o sistema, conduzir os 15 dias, virar a chave no Dia 8 e remover os padrões de antivalor.
               </p>
             </div>
             <div className="deliverables-grid">
