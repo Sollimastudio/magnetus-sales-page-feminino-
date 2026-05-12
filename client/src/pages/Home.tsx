@@ -80,19 +80,19 @@ export default function Home() {
   const faqItems = [
     {
       question: 'O acesso é imediato?',
-      answer: 'Sim! Após a confirmação do pagamento, você recebe acesso instantâneo ao protocolo completo de 15 dias. Sem esperas, sem burocracia. Você entra direto no seu portal e começa a transformação imediatamente.'
+      answer: 'Sim. Após a confirmação do pagamento, você recebe acesso ao protocolo completo de 15 dias e pode começar no seu ritmo, com privacidade e sem burocracia.'
     },
     {
       question: 'Serve para quem quer reconquistar o ex?',
-      answer: 'Magnetus III não é sobre reconquistar. É sobre ressignificar sua identidade para que você nunca mais precise de migalhas. Se ele voltar, será porque você se tornou inegável. O foco é seu poder pessoal, não a aprovação de ninguém.'
+      answer: 'Magnetus III não é sobre controlar, convencer ou reconquistar alguém. O foco é regular o corpo, reconhecer padrões emocionais, fortalecer limites e recuperar clareza para você agir sem autoabandono.'
     },
     {
       question: 'Tenho vergonha, o nome aparece na fatura?',
-      answer: 'Sua privacidade é sagrada. O nome que aparece na fatura é genérico e discreto. Ninguém saberá o que você comprou. Você pode fazer isso em paz, sem julgamentos.'
+      answer: 'Sua privacidade é respeitada. A compra é processada pela plataforma de pagamento de forma discreta, e você recebe o acesso no e-mail informado.'
     },
     {
       question: 'Posso assistir quantas vezes quiser?',
-      answer: 'Sim! Acesso vitalício ao protocolo. Você pode revisar, repetir, aprofundar quantas vezes precisar. É seu. Para sempre.'
+      answer: 'Sim. Você pode revisar o material quantas vezes precisar, repetir exercícios e retomar o protocolo em fases diferentes da sua vida.'
     }
   ];
 
@@ -100,20 +100,20 @@ export default function Home() {
     {
       name: 'Mariana, 34 anos',
       role: 'Empresária',
-      text: 'Depois de 10 anos sendo invisível no meu próprio relacionamento, em 15 dias eu mudei. Não é mágica, é verdade. Meu parceiro me vê diferente. Mas o melhor é que EU me vejo diferente.',
-      avatar: '👑'
+      text: 'Eu vivia tentando interpretar cada silêncio. O protocolo me ajudou a voltar para o meu corpo, organizar meus limites e me perceber com mais respeito.',
+      avatar: 'M'
     },
     {
       name: 'Sofia, 42 anos',
       role: 'Executiva',
-      text: 'Sempre fui a mulher que resolve tudo. Magnetus me mostrou que governar começa em casa, comigo mesma. Minha vida profissional, meus relacionamentos, tudo mudou.',
-      avatar: '✨'
+      text: 'Sempre fui a mulher que resolve tudo. Magnetus me mostrou que presença começa em casa, comigo mesma, antes de qualquer relação ou decisão externa.',
+      avatar: 'S'
     },
     {
       name: 'Juliana, 28 anos',
       role: 'Criadora de Conteúdo',
-      text: 'Eu não sabia que era invisível até o protocolo me mostrar. Agora eu sou o eixo. As pessoas giram ao meu redor. É surreal.',
-      avatar: '💎'
+      text: 'Eu entendi onde me abandonava para ser aceita. Hoje consigo comunicar o que sinto com mais clareza, sem implorar atenção.',
+      avatar: 'J'
     }
   ];
 
@@ -129,11 +129,11 @@ export default function Home() {
                   Ensinaram-te a <span className="gold-text">esperar</span>.
                 </h1>
                 <h2 className="text-3xl md:text-4xl font-serif italic text-gold mb-8">
-                  Vim ensinar-te a <span className="text-white">governar</span>.
+                  Vim lembrar-te de <span className="text-white">voltar ao centro</span>.
                 </h2>
               </div>
               <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
-                Magnetus III é o protocolo de ativação soberana para mulheres que cansaram de ser a segunda opção. Em 15 dias, você ressignifica sua identidade e retoma o poder que sempre foi seu.
+                Magnetus III é um protocolo guiado de 15 dias para regular o corpo, reconhecer padrões emocionais e desenvolver presença, limites e magnetismo pessoal sem autoabandono.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a 
@@ -176,13 +176,13 @@ export default function Home() {
             </h2>
             <div className="space-y-8 text-lg md:text-xl text-gray-400 font-light leading-relaxed pt-8">
               <p>
-                O feminicídio emocional não é um golpe seco. É uma erosão lenta. É o cansaço de ser a mulher que resolve tudo para todos, mas que habita um castelo onde as luzes estão sempre a piscar.
+                O desgaste emocional raramente começa como um rompimento visível. Ele aparece no corpo cansado, na ansiedade antes de responder, no medo de desagradar e na sensação de estar sempre disponível demais.
               </p>
               <p className="text-2xl md:text-3xl gold-text italic font-serif py-8 border-y border-gold/20">
                 Quem te convenceu de que precisavas de aprovação para existir?
               </p>
               <p>
-                Este não é um livro de dicas. É um inventário de guerra contra a invisibilidade. É sobre desinstalar o sistema de quem foi programada para ser escolhida e ativar o sistema de quem <span className="text-white font-semibold">decide ser o destino</span>.
+                Este não é um manual de joguinhos. É uma travessia prática para perceber padrões, liberar pesos internos e reconstruir uma presença que não precisa se diminuir para ser aceita.
               </p>
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-24 reveal">
             <h2 className="text-4xl md:text-6xl gold-text mb-6 uppercase tracking-tighter italic font-serif">Protocolo de Ativação</h2>
-            <p className="text-gray-500 tracking-[0.3em] text-xs uppercase">A tríade do governo pessoal</p>
+            <p className="text-gray-500 tracking-[0.3em] text-xs uppercase">Corpo, clareza e presença</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-12">
@@ -207,7 +207,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl mb-6 font-serif italic text-white">Atrair</h3>
               <p className="text-gray-400 text-base leading-relaxed">
-                Não pela carência, mas pela presença soberana. Aprende a parar de caçar e torna-te o eixo onde tudo converge. Magnetismo não se pede, emite-se.
+                Não por carência, mas por presença. Você aprende a sair da urgência, observar seus impulsos e sustentar uma postura mais calma diante do desejo.
               </p>
             </div>
 
@@ -219,7 +219,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl mb-6 font-serif italic text-white">Ativar</h3>
               <p className="text-gray-200 text-base leading-relaxed font-semibold">
-                O protocolo de 15 dias baseado em neurociência que ressignifica a tua identidade celular. É o fim da "menina boazinha" e o nascimento da mulher que governa.
+                Um percurso de 15 dias com práticas de regulação, escrita, percepção emocional e reposicionamento interno para fortalecer limites sem endurecer o coração.
               </p>
             </div>
 
@@ -230,7 +230,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl mb-6 font-serif italic text-white">Agrupar</h3>
               <p className="text-gray-400 text-base leading-relaxed">
-                Governar o teu ecossistema. Relações, finanças e legado alinhados à tua nova frequência de poder. Onde o caos termina, o teu império começa.
+                Integrar o que você percebe no corpo com escolhas concretas: conversas mais claras, menos autoabandono e relações que respeitam o seu valor.
               </p>
             </div>
           </div>
@@ -243,20 +243,20 @@ export default function Home() {
       <section id="espelho" className="py-24 md:py-40 bg-zinc-950 px-4 md:px-6 border-y border-gold/10 relative text-center">
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="mb-16 reveal">
-            <h2 className="text-4xl md:text-5xl gold-text mb-4 italic font-serif">O Espelho da Soberania ✨</h2>
-            <p className="text-gray-400 font-light uppercase tracking-widest text-xs">Diagnóstico Instantâneo de Governo</p>
+            <h2 className="text-4xl md:text-5xl gold-text mb-4 italic font-serif">O Espelho da Soberania</h2>
+            <p className="text-gray-400 font-light uppercase tracking-widest text-xs">Reflexão guiada de clareza emocional</p>
           </div>
 
           <div className="glass-card p-8 md:p-12 reveal">
             <p className="text-gray-300 mb-8 text-center italic text-lg">
-              "Onde é que a tua coroa caiu? Descreve uma situação onde te sentiste invisível, trocada ou sem poder. Deixa-me mostrar-te o código para retomar o trono."
+              "Descreve uma situação em que você se sentiu invisível, ansiosa, trocada ou sem força para se posicionar. Vou te ajudar a olhar para o padrão por trás da reação."
             </p>
             
             <div className="space-y-6">
               <textarea 
                 value={aiInput}
                 onChange={(e) => setAiInput(e.target.value)}
-                placeholder="Ex: Ele visualizou e não respondeu... Sinto que ninguém me valoriza no trabalho... Sinto que sou sempre a segunda opção..." 
+                placeholder="Ex: ele visualizou e não respondeu... sinto que ninguém me valoriza no trabalho... percebo que fico disponível demais quando gosto de alguém..." 
                 className="w-full bg-black/50 border border-gold/20 rounded-2xl p-6 text-gray-200 focus:border-gold/50 focus:outline-none transition-colors min-h-[150px] italic text-center placeholder-gray-600"
               />
               
@@ -265,7 +265,7 @@ export default function Home() {
                 disabled={aiLoading}
                 className="btn-gold w-full py-5 rounded-2xl text-lg uppercase font-bold flex items-center justify-center gap-3 disabled:opacity-50 mx-auto"
               >
-                <span>Ativar Diagnóstico Soberano ✨</span>
+                <span>Receber Reflexão Guiada</span>
                 {aiLoading && <div className="spinner border-t-black w-5 h-5"></div>}
               </button>
             </div>
@@ -279,7 +279,7 @@ export default function Home() {
                 <div className="text-gray-300 leading-relaxed italic text-lg space-y-4 whitespace-pre-wrap">{aiResult}</div>
                 <div className="mt-8 flex justify-center">
                   <a href="#oferta" className="text-gold text-xs uppercase tracking-[0.3em] font-bold hover:opacity-70 transition-opacity border-b border-gold/30 pb-1">
-                    Aprender o protocolo completo no Magnetus III
+                    Conhecer o protocolo completo Magnetus III
                   </a>
                 </div>
               </div>
@@ -295,7 +295,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-24 reveal">
             <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-4">O que você recebe</h2>
-            <p className="text-gray-400 text-lg">Dois ebooks premium para sua transformação</p>
+            <p className="text-gray-400 text-lg">Materiais guiados para aplicar o protocolo com clareza</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -314,7 +314,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-serif italic text-white mb-4">MAGNETUS III</h3>
               <p className="text-gray-400 leading-relaxed mb-6">
-                O protocolo de 15 dias que transforma sua identidade celular. Baseado em neurociência, este ebook detalha cada dia do protocolo de ativação soberana. Você aprenderá a desinstalar programações limitantes e ativar seu poder magnético genuíno.
+                O protocolo de 15 dias para regular o corpo, reconhecer padrões emocionais e praticar uma presença mais íntegra. Cada etapa foi pensada para transformar percepção em aplicação.
               </p>
               <p className="text-gold font-semibold">Protocolo de Presença Feminina</p>
             </div>
@@ -336,9 +336,9 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-serif italic text-white mb-4">Antídoto ao Antivalor</h3>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Seu ebook bônus exclusivo. Um guia secreto que desvela os padrões de desvalorização que você internalizou. Descubra como mulheres de poder reconhecem seu valor real e recusam migalhas. Este é o antídoto para quem foi programada a aceitar menos.
+                Um guia complementar para identificar padrões de desvalorização internalizados, perceber onde você aceita menos do que precisa e fortalecer escolhas mais coerentes com seu valor.
               </p>
-              <p className="text-gold font-semibold">Bônus Exclusivo e Secreto</p>
+              <p className="text-gold font-semibold">Bônus complementar exclusivo</p>
             </div>
           </div>
         </div>
@@ -412,18 +412,18 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-20 reveal">
             <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-4">A Metamorfose em 7 Dias</h2>
-            <p className="text-gray-400 text-lg">Os 7 pilares do Protocolo Magnetus</p>
+            <p className="text-gray-400 text-lg">Os 7 pilares internos do Protocolo Magnetus</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { num: '1', title: 'Quebra do Estado de Hipervigilância', desc: 'Desativar o sistema de alerta crônico que mantém você em pânico' },
-              { num: '2', title: 'Ressignificação da Autoimagem Neural', desc: 'Reprogramar como seu cérebro vê você' },
-              { num: '3', title: 'Domínio da Linguagem Corporal de Alto Valor', desc: 'Seu corpo fala antes da boca' },
-              { num: '4', title: 'Ativação do Efeito Imã Social', desc: 'Tornar-se o eixo onde tudo converge' },
-              { num: '5', title: 'Comunicação Visceral e Assertiva', desc: 'Falar com presença, não com agressão' },
-              { num: '6', title: 'Eliminação de Bloqueios Religiosos Limitantes', desc: 'Desinstalar programações de anulação' },
-              { num: '7', title: 'Protocolo de Presença Inabalável', desc: 'Integração e consolidação do novo sistema' },
+              { num: '1', title: 'Regulação do Estado de Alerta', desc: 'Perceber e acalmar o corpo antes de reagir por ansiedade' },
+              { num: '2', title: 'Reconstrução da Autoimagem', desc: 'Revisar a forma como você se enxerga e se trata' },
+              { num: '3', title: 'Presença Corporal Consciente', desc: 'Usar postura, respiração e ritmo como sinais de segurança interna' },
+              { num: '4', title: 'Magnetismo Pessoal', desc: 'Cultivar presença sem performance, urgência ou autoabandono' },
+              { num: '5', title: 'Comunicação Clara e Assertiva', desc: 'Falar com firmeza, sem agressividade e sem pedir licença para existir' },
+              { num: '6', title: 'Liberação de Pesos Internos', desc: 'Reconhecer culpas, crenças e padrões que sustentam a autoanulação' },
+              { num: '7', title: 'Integração de Limites e Desejo', desc: 'Consolidar escolhas mais conscientes nas relações e na vida cotidiana' },
             ].map((item, idx) => (
               <div key={idx} className="glass-card p-6 rounded-2xl reveal" style={{ transitionDelay: `${idx * 50}ms` }}>
                 <div className="flex items-start gap-4">
@@ -448,13 +448,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-24 reveal">
             <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-4">Histórias de Transformação</h2>
-            <p className="text-gray-400 text-lg">Mulheres que ativaram seu poder</p>
+            <p className="text-gray-400 text-lg">Mulheres em processo de presença, clareza e limites</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
             {testimonials.map((testimonial, idx) => (
               <div key={idx} className="glass-card p-8 rounded-3xl reveal" style={{ transitionDelay: `${idx * 100}ms` }}>
-                <div className="text-5xl mb-6">{testimonial.avatar}</div>
+                <div className="w-14 h-14 mb-6 rounded-full border border-gold/30 bg-gold/10 flex items-center justify-center text-gold font-serif text-2xl italic">{testimonial.avatar}</div>
                 <p className="text-gray-300 italic mb-6 leading-relaxed">"{testimonial.text}"</p>
                 <div className="border-t border-gold/20 pt-6">
                   <p className="font-semibold text-white">{testimonial.name}</p>
@@ -473,7 +473,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-20 reveal">
             <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-4">Magnetus III - Bundle Completo</h2>
-            <p className="text-gray-400 text-lg">Tudo que você precisa para 15 dias de ativação</p>
+            <p className="text-gray-400 text-lg">Um caminho guiado para 15 dias de presença, limites e clareza emocional</p>
           </div>
 
           <div className="glass-card-dark p-12 rounded-3xl mb-8 reveal">
@@ -482,35 +482,35 @@ export default function Home() {
                 <Check className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-white font-semibold mb-2">Protocolo de 15 Dias</h3>
-                  <p className="text-gray-400">Aulas diárias com técnicas de neurociência e ressignificação de identidade</p>
+                  <p className="text-gray-400">Aulas e práticas diárias para regulação emocional, presença e reposicionamento interno</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Check className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-white font-semibold mb-2">Workbook Interativo</h3>
-                  <p className="text-gray-400">Exercícios práticos para ativar seu poder pessoal dia a dia</p>
+                  <p className="text-gray-400">Exercícios de escrita, percepção corporal e aplicação para a rotina real</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Check className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-white font-semibold mb-2">Comunidade Exclusiva</h3>
-                  <p className="text-gray-400">Acesso ao círculo de mulheres ativadas (suporte vitalício)</p>
+                  <p className="text-gray-400">Espaço de apoio para mulheres que estão aplicando o protocolo com responsabilidade</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Check className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-white font-semibold mb-2">Bônus: Guia de Relacionamentos</h3>
-                  <p className="text-gray-400">Manual exclusivo sobre como manter seu poder em relacionamentos</p>
+                  <h3 className="text-white font-semibold mb-2">Bônus: Guia de Limites nas Relações</h3>
+                  <p className="text-gray-400">Material complementar para sustentar presença e clareza sem jogos emocionais</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Check className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-white font-semibold mb-2">Ebook Bônus: Antídoto ao Antivalor</h3>
-                  <p className="text-gray-400">Guia secreto para reconhecer e recusar desvalorização</p>
+                  <p className="text-gray-400">Guia complementar para reconhecer e recusar desvalorização</p>
                 </div>
               </div>
             </div>
@@ -528,7 +528,7 @@ export default function Home() {
               <p className="text-4xl md:text-5xl font-bold text-white mb-2">
                 R$ 297<span className="text-2xl text-gray-400 line-through ml-4">497</span>
               </p>
-              <p className="text-gold text-lg font-semibold mb-8">40% de desconto - Acesso vitalício</p>
+              <p className="text-gold text-lg font-semibold mb-8">40% de desconto | Acesso vitalício</p>
               
               <a 
                 href={KIWIFY_CHECKOUT}
@@ -554,19 +554,19 @@ export default function Home() {
       {/* SOCIAL PROOF - NUMBERS */}
       <section className="py-20 md:py-32 bg-black px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center reveal">
-          <h2 className="text-3xl md:text-4xl font-serif italic text-white mb-12">Junte-se a mulheres que já ativaram seu poder</h2>
+          <h2 className="text-3xl md:text-4xl font-serif italic text-white mb-12">Junte-se a mulheres que escolheram voltar para si</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-2">
               <p className="text-4xl md:text-5xl font-bold text-gold">12.000+</p>
-              <p className="text-gray-400">Mulheres Ativadas</p>
+              <p className="text-gray-400">Mulheres na comunidade</p>
             </div>
             <div className="space-y-2">
               <p className="text-4xl md:text-5xl font-bold text-gold">15</p>
-              <p className="text-gray-400">Dias de Transformação</p>
+              <p className="text-gray-400">Dias de protocolo guiado</p>
             </div>
             <div className="space-y-2">
               <p className="text-4xl md:text-5xl font-bold text-gold">100%</p>
-              <p className="text-gray-400">Garantia de Satisfação</p>
+              <p className="text-gray-400">Garantia de 7 dias</p>
             </div>
           </div>
         </div>
@@ -611,10 +611,10 @@ export default function Home() {
       <section className="py-24 bg-black px-4 md:px-6 text-center">
         <div className="max-w-3xl mx-auto reveal">
           <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-6">
-            Sua coroa está esperando.
+            Volte para o seu centro.
           </h2>
           <p className="text-gray-400 text-lg mb-10">
-            Não é sobre reconquistar ninguém. É sobre se reconquistar. Magnetus III é o primeiro passo para você se tornar inegável.
+            Não é sobre reconquistar ninguém. É sobre se reconquistar, regular o corpo, sustentar limites e viver o desejo sem se abandonar.
           </p>
           <a 
             href={KIWIFY_CHECKOUT}

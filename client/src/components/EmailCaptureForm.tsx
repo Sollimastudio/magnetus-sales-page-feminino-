@@ -11,6 +11,7 @@ import { Mail, ArrowRight, Check } from 'lucide-react';
 
 interface EmailCaptureFormProps {
   onSubmit?: (email: string) => void;
+  lastQuestion?: string;
 }
 
 export default function EmailCaptureForm({ onSubmit }: EmailCaptureFormProps) {
@@ -64,10 +65,10 @@ export default function EmailCaptureForm({ onSubmit }: EmailCaptureFormProps) {
           </div>
         </div>
         <p className="text-center text-gold mt-6 font-serif italic text-lg">
-          Email confirmado! 🎯
+          Email confirmado.
         </p>
         <p className="text-center text-gray-400 mt-2 text-sm">
-          Prepare-se para mensagens que mudarão seu jogo.
+          Você receberá conteúdos práticos sobre presença, limites e clareza emocional.
         </p>
       </div>
     );
@@ -86,11 +87,11 @@ export default function EmailCaptureForm({ onSubmit }: EmailCaptureFormProps) {
             Acesso Exclusivo
           </span>
           <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-6 reveal" style={{ transitionDelay: '100ms' }}>
-            Receba o Diagnóstico Secreto
+            Receba Reflexões Guiadas
           </h2>
           <p className="text-lg text-gray-300 font-light italic reveal" style={{ transitionDelay: '200ms' }}>
-            Inscreva-se para receber insights provocadores sobre seu poder pessoal.<br />
-            Sem spam. Sem filtros. Apenas verdade.
+            Inscreva-se para receber conteúdos sobre regulação emocional, presença e limites.<br />
+            Sem spam. Com privacidade e respeito ao seu processo.
           </p>
         </div>
 
@@ -158,7 +159,7 @@ export default function EmailCaptureForm({ onSubmit }: EmailCaptureFormProps) {
             {/* Trust message */}
             <div className="mt-6 text-center">
               <p className="text-xs text-gray-400 font-light">
-                ✓ Sua privacidade é sagrada. Nenhum spam. Cancelar é fácil.
+                Sua privacidade é respeitada. Nenhum spam. Cancelar é fácil.
               </p>
             </div>
           </form>
@@ -166,7 +167,7 @@ export default function EmailCaptureForm({ onSubmit }: EmailCaptureFormProps) {
 
         {/* Social proof */}
         <div className="mt-10 text-center">
-          <p className="text-sm text-gray-400 mb-4">Junte-se a 12.000+ mulheres que já ativaram seu poder</p>
+          <p className="text-sm text-gray-400 mb-4">Junte-se a mulheres em processo de presença e clareza</p>
           <div className="flex justify-center gap-2">
             {[1, 2, 3, 4, 5].map((i) => (
               <div

@@ -105,14 +105,24 @@ function App() {
         <div className="hero-shell">
           <div className="hero-badge">
             <Sparkles size={18} />
-            Protocolo digital de ativação feminina
+            Protocolo guiado de presença feminina
           </div>
           <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="hero-image-link" aria-label="Comprar Magnetus III">
+            <div className="hero-copy-overlay">
+              <h1>Pare de se apagar para ser escolhida.</h1>
+              <p>
+                Um protocolo guiado de 15 dias para regular seu corpo, reconhecer padrões emocionais e construir presença, limites e magnetismo pessoal sem se abandonar por amor.
+              </p>
+            </div>
           <img 
             src="/images/magnetus_feminina_hero.png" 
             alt="Magnetus III - Ative sua Presença" 
               className="hero-image"
           />
+            <span className="hero-image-cta">
+              Quero acessar o protocolo
+              <ArrowRight size={18} />
+            </span>
         </a>
           <div className="hero-actions">
             <p className="secure-note">
@@ -128,18 +138,15 @@ function App() {
         <div className="container">
           <div className="pain-content">
             <h2 className="section-title">
-              Você sente que está fazendo "tudo certo" e, ainda assim, continua sendo <span className="text-bordeaux">deixada para depois</span>?
+              Você é forte na vida, mas <span className="text-bordeaux">perde o eixo</span> quando gosta de alguém?
             </h2>
             <div className="pain-text">
               <p>
-                Você é independente, inteligente e bem-sucedida. Mas, quando o assunto é o coração, parece que você volta a ser aquela menina que espera pela aprovação de alguém.
-              </p>
-              <p>
-                Você olha o celular, espera a mensagem que não vem, ou pior: se molda para caber na vida de um homem que nem sabe o que quer.
+                Você trabalha, resolve, sustenta tanta coisa... mas quando o assunto é vínculo, começa a esperar mensagem, medir palavras, se adaptar demais e aceitar menos do que merece só para não perder a conexão.
               </p>
               <div className="final-blow">
                 <p>
-                  <strong>Não é falta de sorte.</strong> É uma <span className="highlight">programação silenciosa de escassez</span> que instalaram em você. E enquanto você não desinstalar isso, o ciclo de rejeição vai se repetir.
+                  <strong>Não é falta de sorte.</strong> É um <span className="highlight">padrão emocional aprendido</span>. Enquanto ele continua invisível, você tende a repetir escolhas, reações e entregas que enfraquecem sua presença.
                 </p>
               </div>
             </div>
@@ -407,7 +414,7 @@ function App() {
       </section>
 
       <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="sticky-cta">
-        Ativar agora
+        Quero acessar o protocolo
         <ArrowRight size={18} />
       </a>
 
