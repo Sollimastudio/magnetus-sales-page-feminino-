@@ -239,6 +239,75 @@ export default function Home() {
 
       <div className="luxury-divider my-24" />
 
+      {/* METHOD PROOF SECTION */}
+      <section className="py-20 md:py-32 bg-gradient-to-b from-black via-[#16080d] to-black px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="reveal grid lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-16 items-start">
+            <div className="space-y-7">
+              <p className="text-gold text-xs uppercase tracking-[0.28em] font-bold">
+                Prova de método
+              </p>
+              <div className="space-y-5">
+                <h2 className="text-4xl md:text-5xl font-serif italic text-white leading-tight">
+                  Antes de existirem depoimentos, existe uma estrutura.
+                </h2>
+                <p className="text-xl md:text-2xl text-gold font-serif italic leading-snug">
+                  Você não compra uma promessa solta. Você acessa um caminho guiado.
+                </p>
+              </div>
+              <div className="space-y-5 text-gray-300 text-base md:text-lg leading-relaxed font-light">
+                <p>
+                  Este não é um material criado para impressionar com frases bonitas e deixar você sozinha depois da compra.
+                </p>
+                <p>
+                  O Magnetus III foi desenhado como uma jornada prática: você começa pelo Dia 0, passa pela anamnese, aprende o restart da respiração, atravessa 15 dias de aplicação e recebe um bônus para identificar comportamentos que drenam sua presença.
+                </p>
+                <p className="text-white">
+                  Cada parte tem uma função dentro do processo.
+                </p>
+              </div>
+            </div>
+
+            <div className="glass-card-dark p-5 md:p-8 rounded-3xl border-gold/30">
+              <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
+                {[
+                  'Preparar o corpo antes da leitura',
+                  'Revelar padrões emocionais invisíveis',
+                  'Interromper reações automáticas',
+                  'Atravessar a virada interna do Dia 8',
+                  'Aplicar presença, postura e comunicação no mundo real',
+                  'Identificar atitudes de antivalor que drenam magnetismo',
+                ].map((item, idx) => (
+                  <div
+                    key={item}
+                    className="bg-white/[0.04] border border-gold/15 rounded-2xl p-4 md:p-5 min-h-[112px] flex flex-col justify-between"
+                    style={{ transitionDelay: `${idx * 45}ms` }}
+                  >
+                    <div className="w-9 h-9 rounded-full bg-gold/10 border border-gold/25 flex items-center justify-center mb-5">
+                      <Check className="w-4 h-4 text-gold" />
+                    </div>
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-7 md:mt-8 pt-7 border-t border-gold/20 space-y-5">
+                <p className="text-white text-lg md:text-xl font-serif italic leading-relaxed">
+                  Você não compra apenas um ebook. Você acessa uma estrutura para voltar ao próprio centro.
+                </p>
+                <p className="bg-gold/10 border border-gold/25 rounded-2xl p-5 text-gold text-sm md:text-base leading-relaxed font-semibold">
+                  Quando ainda não há prova social, a prova precisa estar na clareza do processo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="luxury-divider my-24" />
+
       {/* ESPELHO DA SOBERANIA - AI MIRROR SECTION */}
       <section id="espelho" className="py-24 md:py-40 bg-zinc-950 px-4 md:px-6 border-y border-gold/10 relative text-center">
         <div className="max-w-4xl mx-auto relative z-10">
