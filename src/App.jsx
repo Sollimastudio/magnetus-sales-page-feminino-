@@ -398,6 +398,150 @@ function App() {
         </div>
       </section>
 
+      {/* QUEBRA DE OBJEÇÕES — Ancoragem de Preço */}
+      <section className="price-anchor-section" aria-labelledby="price-anchor-title">
+        <div className="container">
+          <div className="price-anchor-header">
+            <span className="eyebrow">Perspectiva real</span>
+            <h2 id="price-anchor-title">Você gasta mais do que isso com coisas que não mudam nada na sua vida.</h2>
+            <p>
+              Antes de pensar no preço, olhe para o que você já investe — sem retorno emocional, sem transformação, sem direção.
+            </p>
+          </div>
+
+          <div className="price-anchor-grid">
+            {/* Coluna: Gastos comuns */}
+            <div className="price-anchor-col">
+              <span className="price-anchor-col-title expenses">
+                <XCircle size={16} />
+                Você já gasta com isso
+              </span>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon expense">💅</div>
+                <div className="anchor-item-label">
+                  Manicure + pedicure
+                  <small>Dura uma semana</small>
+                </div>
+                <span className="anchor-item-price red">R$ 85</span>
+              </div>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon expense">🍷</div>
+                <div className="anchor-item-label">
+                  Um jantar fora
+                  <small>Dura uma noite</small>
+                </div>
+                <span className="anchor-item-price red">R$ 120</span>
+              </div>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon expense">💄</div>
+                <div className="anchor-item-label">
+                  Um perfume importado
+                  <small>Dura alguns meses</small>
+                </div>
+                <span className="anchor-item-price red">R$ 250</span>
+              </div>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon expense">🛋️</div>
+                <div className="anchor-item-label">
+                  Uma sessão de terapia
+                  <small>Dura 50 minutos</small>
+                </div>
+                <span className="anchor-item-price red">R$ 200</span>
+              </div>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon expense">📱</div>
+                <div className="anchor-item-label">
+                  Assinaturas mensais
+                  <small>Streaming + apps que você nem usa</small>
+                </div>
+                <span className="anchor-item-price red">R$ 90</span>
+              </div>
+            </div>
+
+            {/* Divisor VS */}
+            <div className="price-anchor-divider">
+              <div className="price-anchor-divider-line" />
+            </div>
+
+            {/* Coluna: O que você recebe */}
+            <div className="price-anchor-col">
+              <span className="price-anchor-col-title value">
+                <Sparkles size={16} />
+                O que o Magnetus entrega
+              </span>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon worth">🧠</div>
+                <div className="anchor-item-label">
+                  Regulação emocional
+                  <small>Parar de reagir por impulso</small>
+                </div>
+                <span className="anchor-item-price gold">✓</span>
+              </div>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon worth">🪞</div>
+                <div className="anchor-item-label">
+                  Reconhecimento de padrões
+                  <small>Enxergar o que te sabota</small>
+                </div>
+                <span className="anchor-item-price gold">✓</span>
+              </div>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon worth">👑</div>
+                <div className="anchor-item-label">
+                  Presença e magnetismo
+                  <small>Mudar como o outro te percebe</small>
+                </div>
+                <span className="anchor-item-price gold">✓</span>
+              </div>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon worth">🛡️</div>
+                <div className="anchor-item-label">
+                  Limites sem endurecer
+                  <small>Se posicionar com calma</small>
+                </div>
+                <span className="anchor-item-price gold">✓</span>
+              </div>
+
+              <div className="anchor-item">
+                <div className="anchor-item-icon worth">📖</div>
+                <div className="anchor-item-label">
+                  Protocolo guiado de 15 dias
+                  <small>Começo, meio e aplicação prática</small>
+                </div>
+                <span className="anchor-item-price gold">✓</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Veredito */}
+          <div className="price-anchor-verdict">
+            <div className="price-anchor-verdict-card">
+              <div className="price-anchor-verdict-price">
+                <span className="old">R$ 174,75</span>
+                <span className="current">R$ 69,90</span>
+                <span className="installments">ou 12x de R$ 6,99</span>
+              </div>
+              <p>
+                Menos que uma manicure. Mais valioso que meses de tentativa sozinha. Um investimento que muda a forma como você se posiciona em todos os seus relacionamentos.
+              </p>
+              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="price-anchor-verdict-cta">
+                QUERO COMEÇAR POR R$ 69,90
+                <ArrowRight size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="clear-offer-section" aria-labelledby="clear-offer-title">
         <div className="container">
           <div className="clear-offer-grid">
