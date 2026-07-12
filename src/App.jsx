@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BadgeCheck, ChevronDown, Clock3, FileText, LockKeyhole, ShieldCheck, Sparkles, XCircle, CheckCircle } from 'lucide-react';
+import { ArrowRight, BadgeCheck, Clock3, FileText, LockKeyhole, ShieldCheck, Sparkles, XCircle, CheckCircle } from 'lucide-react';
 import './App.css';
 import MobileScrollHero from './MobileScrollHero.jsx';
 
@@ -58,21 +58,6 @@ const deliverables = [
   }
 ];
 
-const clearOfferItems = [
-  'Magnetus III — guia principal de 15 dias',
-  'Guia do começo — preparação e respiração',
-  'Prática de liberação — exercício da virada',
-  'Bônus O que evitar — atitudes que diminuem seu valor'
-];
-
-const clearOfferBenefits = [
-  'Acesso imediato',
-  '100% digital',
-  'Leitura no celular',
-  'Garantia de 7 dias',
-  'Compra segura'
-];
-
 const diagnosticQuestions = [
   {
     question: 'Quando você gosta de alguém, o que mais acontece com você?',
@@ -100,121 +85,9 @@ const diagnosticQuestions = [
   }
 ];
 
-const strategicFaqs = [
-  {
-    question: 'O acesso é imediato?',
-    answer: 'Sim. Após a confirmação do pagamento, você recebe o acesso ao material digital para começar pelo celular, tablet ou computador.'
-  },
-  {
-    question: 'O Magnetus III é um curso ou um guia?',
-    answer: 'É um guia digital com passo a passo. Você recebe o material principal e bônus para aplicar no seu ritmo.'
-  },
-  {
-    question: 'Quanto tempo preciso por dia?',
-    answer: 'De 15 a 30 minutos por dia já ajudam. A ideia é ser simples e caber na rotina.'
-  },
-  {
-    question: 'Serve para quem quer reconquistar o ex?',
-    answer: 'Ele não promete controlar ninguém. O foco é você mudar sua postura, parar de se diminuir e se relacionar com mais calma.'
-  },
-  {
-    question: 'Isso funciona para mulheres solteiras ou comprometidas?',
-    answer: 'Sim. Serve para mulheres que querem parar de agir por ansiedade, carência ou medo de perder.'
-  },
-  {
-    question: 'Preciso fazer todos os dias seguidos?',
-    answer: 'O ideal é seguir os 15 dias. Se precisar pausar, você volta de onde parou.'
-  },
-  {
-    question: 'O que é o Dia 0?',
-    answer: 'É a preparação. Você entende seu momento atual e aprende uma respiração para começar com mais calma.'
-  },
-  {
-    question: 'O que é a prática de liberação?',
-    answer: 'É um exercício para soltar pesos, fechar ciclos e parar de agir presa ao passado.'
-  },
-  {
-    question: 'O que é o bônus O que evitar?',
-    answer: 'É um guia que mostra atitudes que passam insegurança e fazem você parecer disponível demais.'
-  },
-  {
-    question: 'Esse material substitui terapia?',
-    answer: 'Não. O Magnetus III é um material educativo e de desenvolvimento pessoal. Ele não substitui acompanhamento psicológico, psiquiátrico ou terapêutico quando necessário.'
-  },
-  {
-    question: 'Tenho garantia?',
-    answer: 'Sim. Você tem garantia de 7 dias para avaliar se o material faz sentido para você, conforme as regras da plataforma de pagamento.'
-  },
-  {
-    question: 'Como aparece na fatura?',
-    answer: 'O pagamento é processado pela plataforma externa de checkout. A identificação pode variar conforme o processador de pagamento utilizado.'
-  },
-  {
-    question: 'É discreto?',
-    answer: 'Sim. O acesso é digital, individual e enviado após a confirmação do pagamento.'
-  },
-  {
-    question: 'Posso ler pelo celular?',
-    answer: 'Sim. O material é 100% digital e foi pensado para leitura prática no celular.'
-  },
-  {
-    question: 'O Magnetus ensina joguinho ou manipulação?',
-    answer: 'Não. O foco é postura, calma, limites e comunicação clara.'
-  }
-];
-
 function App() {
-  const [openFaq, setOpenFaq] = React.useState(null);
-  const [openStrategicFaq, setOpenStrategicFaq] = React.useState(null);
   const [diagnosticAnswers, setDiagnosticAnswers] = React.useState({});
   const [diagnosticStep, setDiagnosticStep] = React.useState(0);
-
-  const toggleFaq = (index) => {
-    if (openFaq === index) {
-      setOpenFaq(null);
-    } else {
-      setOpenFaq(index);
-    }
-  };
-
-  const toggleStrategicFaq = (index) => {
-    if (openStrategicFaq === index) {
-      setOpenStrategicFaq(null);
-    } else {
-      setOpenStrategicFaq(index);
-    }
-  };
-
-  const faqs = [
-    {
-      question: "O acesso é imediato?",
-      answer: "Sim. Depois do pagamento, o acesso chega no seu e-mail e você já pode começar."
-    },
-    {
-      question: "Serve para quem quer reconquistar o ex?",
-      answer: "Serve se o seu foco for parar de implorar atenção e mudar sua postura. Não promete controlar ninguém."
-    },
-    {
-      question: "Tenho vergonha, o nome aparece na fatura?",
-      answer: "Não. Sabemos da importância da sua privacidade. A compra aparecerá discretamente como \"Compra Digital\" na sua fatura."
-    },
-    {
-      question: "O que exatamente eu recebo?",
-      answer: "Você recebe o guia principal, o guia do começo, a prática de liberação e o bônus O que evitar."
-    },
-    {
-      question: "Quanto tempo preciso por dia?",
-      answer: "Alguns minutos por dia já ajudam. O material foi feito para caber na rotina."
-    },
-    {
-      question: "Isso é sobre manipular alguém?",
-      answer: "Não. O foco é parar de agir por ansiedade, ter mais limite e falar com mais clareza."
-    },
-    {
-      question: "Tem garantia?",
-      answer: "Sim. A oferta possui garantia de 7 dias, conforme exibido na página de compra. Se não fizer sentido para você dentro do prazo, é possível solicitar reembolso pela plataforma."
-    }
-  ];
 
   const answeredCount = Object.keys(diagnosticAnswers).length;
   const diagnosticComplete = answeredCount === diagnosticQuestions.length;
@@ -638,101 +511,6 @@ function App() {
         </div>
       </section>
 
-      <section className="clear-offer-section" aria-labelledby="clear-offer-title">
-        <div className="container">
-          <div className="clear-offer-grid">
-            <div className="clear-offer-copy">
-              <span className="eyebrow eyebrow-light">Oferta simples</span>
-              <h2 id="clear-offer-title">Comece hoje o Magnetus III</h2>
-              <p className="clear-offer-subtitle">
-                Um guia digital de 15 dias para diminuir a ansiedade e se posicionar melhor.
-              </p>
-              <p className="clear-offer-text">
-                Você recebe materiais práticos para parar de agir no impulso, entender seus padrões e recuperar sua segurança.
-              </p>
-            </div>
-
-            <div className="clear-offer-card">
-              <div className="clear-offer-includes">
-                <p>Incluso no acesso:</p>
-                <ul>
-                  {clearOfferItems.map((item) => (
-                    <li key={item}>
-                      <CheckCircle size={20} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="clear-offer-benefits" aria-label="Benefícios da compra">
-                {clearOfferBenefits.map((benefit) => (
-                  <span key={benefit}>{benefit}</span>
-                ))}
-              </div>
-
-              <div className="clear-offer-price" aria-label="Preço da oferta">
-                <p className="clear-offer-old-price">De R$ 174,75</p>
-                <p className="clear-offer-current-price">por apenas R$ 69,90</p>
-                <p className="clear-offer-installments">ou 12x de R$ 6,99</p>
-              </div>
-
-              <p className="clear-offer-reinforcement">
-                Se você quer parar de se perder quando gosta de alguém, comece por aqui.
-              </p>
-
-              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="clear-offer-button">
-                QUERO COMEÇAR AGORA
-                <ArrowRight size={20} />
-              </a>
-              <p className="clear-offer-access-note">
-                Acesso liberado após a confirmação do pagamento.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="strategic-faq-section" aria-labelledby="strategic-faq-title">
-        <div className="container">
-          <div className="strategic-faq-header">
-            <span className="eyebrow">Perguntas frequentes</span>
-            <h2 id="strategic-faq-title">Ainda tem dúvidas?</h2>
-            <p>Antes de começar, veja as respostas para as perguntas mais comuns.</p>
-          </div>
-
-          <div className="strategic-faq-list">
-            {strategicFaqs.map((faq, index) => (
-              <button
-                type="button"
-                key={faq.question}
-                className={`strategic-faq-item ${openStrategicFaq === index ? 'active' : ''}`}
-                onClick={() => toggleStrategicFaq(index)}
-                aria-expanded={openStrategicFaq === index}
-              >
-                <span className="strategic-faq-question">
-                  <span>{faq.question}</span>
-                  <ChevronDown size={22} />
-                </span>
-                <span className="strategic-faq-answer">
-                  {faq.answer}
-                </span>
-              </button>
-            ))}
-          </div>
-
-          <div className="strategic-faq-close">
-            <p>
-              Se você queria saber se é simples e prático, a resposta é sim: o Magnetus III foi feito para conduzir você passo a passo.
-            </p>
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="strategic-faq-button">
-              QUERO COMEÇAR AGORA
-              <ArrowRight size={20} />
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* 5. QUEBRA DE OBJEÇÕES E ANCORAGEM (A Oferta) */}
       <section id="oferta" className="offer-section">
         <div className="container">
@@ -829,32 +607,6 @@ function App() {
               <p className="personal-note-signature">— Sol Lima</p>
             </div>
           </article>
-        </div>
-      </section>
-
-      {/* 8. FAQ */}
-      <section className="faq-section">
-        <div className="container">
-          <h2 className="section-title text-center">Ainda tem dúvidas?</h2>
-          <div className="faq-list">
-            {faqs.map((faq, index) => (
-              <button
-                type="button"
-                key={index} 
-                className={`faq-item ${openFaq === index ? 'active' : ''}`}
-                onClick={() => toggleFaq(index)}
-                aria-expanded={openFaq === index}
-              >
-                <div className="faq-question">
-                  <h4>{faq.question}</h4>
-                  <ChevronDown className="faq-icon" />
-                </div>
-                <div className="faq-answer">
-                  <p>{faq.answer}</p>
-                </div>
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
