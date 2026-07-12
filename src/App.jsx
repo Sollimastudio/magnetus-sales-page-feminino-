@@ -6,32 +6,32 @@ import MobileScrollHero from './MobileScrollHero.jsx';
 const checkoutUrl = 'https://pay.kiwify.com.br/m8cGccz';
 
 const fitPoints = [
-  'Você se percebe ansiosa, reativa ou disponível demais quando gosta de alguém.',
-  'Você quer parar de tentar convencer e começar a se posicionar com calma.',
-  'Você entende que magnetismo não nasce de joguinho, mas de postura interna.',
-  'Você precisa de um roteiro claro para cortar padrões de escassez emocional.'
+  'Você fica ansiosa quando gosta de alguém.',
+  'Você quer parar de correr atrás e começar a se respeitar.',
+  'Você quer ser lembrada sem precisar implorar atenção.',
+  'Você precisa de um passo a passo simples para mudar seu comportamento.'
 ];
 
 const methodSteps = [
   {
     label: 'Dia 0',
-    title: 'Anamnese e restart da respiração',
-    text: 'Você responde a anamnese inicial e aprende a ativar o restart da respiração, o primeiro comando para sair do automático emocional.'
+    title: 'Primeiro passo',
+    text: 'Você entende como está hoje e aprende uma respiração simples para acalmar o corpo antes de agir.'
   },
   {
     label: 'Dias 1 a 7',
-    title: 'Fase 1: magnetismo interior',
-    text: 'A primeira fase trata o campo interno: ansiedade, reatividade, escassez, autoabandono e o padrão de correr atrás.'
+    title: 'Organizar por dentro',
+    text: 'Você trabalha ansiedade, carência, medo de perder e o hábito de correr atrás.'
   },
   {
     label: 'Dia 8',
-    title: 'Transição: Matemática da Liberação',
-    text: 'O oitavo dia marca a passagem entre a reconstrução interna e a projeção externa, com uma prática de liberação emocional para soltar pesos internos, fechar ciclos e preparar o corpo para sustentar presença fora.'
+    title: 'Virada emocional',
+    text: 'Você faz uma prática para soltar pesos, encerrar ciclos e parar de carregar o que te prende.'
   },
   {
     label: 'Dias 9 a 15',
-    title: 'Fase 2: magnetismo exterior',
-    text: 'A segunda fase aplica presença, postura, linguagem, silêncio estratégico e valor percebido na forma como você se posiciona no mundo.'
+    title: 'Agir diferente',
+    text: 'Você aprende postura, comunicação, silêncio e limites para ser vista com mais valor.'
   }
 ];
 
@@ -39,30 +39,30 @@ const deliverables = [
   {
     icon: FileText,
     title: 'Magnetus III',
-    text: 'O manual central do método, com a estrutura completa para desenvolver presença, clareza emocional, limites e magnetismo pessoal.'
+    text: 'O guia principal com o passo a passo dos 15 dias.'
   },
   {
     icon: Clock3,
-    title: 'Manual Dia 0',
-    text: 'A abertura do protocolo: anamnese inicial e restart da respiração para preparar o corpo antes da fase 1.'
+    title: 'Guia do começo',
+    text: 'A preparação para você iniciar com calma e clareza.'
   },
   {
     icon: BadgeCheck,
-    title: 'Ritual Matemática da Liberação',
-    text: 'A transição do Dia 8 para fechar ciclos internos, soltar pesos emocionais e preparar a entrada no magnetismo exterior.'
+    title: 'Prática de liberação',
+    text: 'Um exercício para soltar pesos emocionais e virar a chave.'
   },
   {
     icon: ShieldCheck,
-    title: 'Bônus Antídoto do Antivalor',
-    text: 'Um guia prático para identificar comportamentos que vazam insegurança, alimentam reatividade e enfraquecem sua presença antes mesmo de qualquer conversa.'
+    title: 'Bônus: o que evitar',
+    text: 'Um guia para perceber atitudes que passam insegurança e diminuem seu valor.'
   }
 ];
 
 const clearOfferItems = [
-  'Magnetus III — manual principal do método',
-  'Manual Dia 0 — anamnese + restart da respiração',
-  'Matemática do Perdão — virada de chave do Dia 8',
-  'Bônus Antídoto do Antivalor — diagnóstico dos comportamentos que sabotam sua presença'
+  'Magnetus III — guia principal de 15 dias',
+  'Guia do começo — preparação e respiração',
+  'Prática de liberação — exercício da virada',
+  'Bônus O que evitar — atitudes que diminuem seu valor'
 ];
 
 const clearOfferBenefits = [
@@ -75,27 +75,27 @@ const clearOfferBenefits = [
 
 const diagnosticQuestions = [
   {
-    question: 'Quando você gosta de alguém, o que mais acontece?',
+    question: 'Quando você gosta de alguém, o que mais acontece com você?',
     answers: [
-      'Eu espero sinais e me adapto demais',
-      'Eu fico ansiosa e tento controlar a resposta',
-      'Eu me calo para não parecer intensa'
+      'Fico esperando mensagem e sinais de atenção.',
+      'Mudo meu jeito para agradar mais.',
+      'Tenho medo de falar o que sinto.'
     ]
   },
   {
-    question: 'Onde você sente que perde presença?',
+    question: 'Em qual situação você mais se sente invisível?',
     answers: [
-      'Nas relações afetivas',
-      'Na forma como comunico meus limites',
-      'Na sensação de precisar provar valor'
+      'Quando a pessoa some ou responde frio.',
+      'Quando eu faço muito e recebo pouco.',
+      'Quando preciso pedir o mínimo.'
     ]
   },
   {
-    question: 'O que você mais quer reconstruir agora?',
+    question: 'O que você mais quer mudar agora?',
     answers: [
-      'Clareza emocional',
-      'Postura e magnetismo',
-      'Limites sem endurecer'
+      'Quero parar de correr atrás.',
+      'Quero impor limites sem culpa.',
+      'Quero me sentir mais segura e desejada.'
     ]
   }
 ];
@@ -106,36 +106,36 @@ const strategicFaqs = [
     answer: 'Sim. Após a confirmação do pagamento, você recebe o acesso ao material digital para começar pelo celular, tablet ou computador.'
   },
   {
-    question: 'O Magnetus III é um curso ou um ebook?',
-    answer: 'É um protocolo digital em formato de leitura guiada, com materiais complementares. Você recebe o manual principal, o Dia 0, a Matemática do Perdão e o bônus Antídoto do Antivalor.'
+    question: 'O Magnetus III é um curso ou um guia?',
+    answer: 'É um guia digital com passo a passo. Você recebe o material principal e bônus para aplicar no seu ritmo.'
   },
   {
     question: 'Quanto tempo preciso por dia?',
-    answer: 'O ideal é separar de 15 a 30 minutos por dia para ler, refletir e aplicar os exercícios. O protocolo foi pensado para ser prático, direto e possível de encaixar na rotina.'
+    answer: 'De 15 a 30 minutos por dia já ajudam. A ideia é ser simples e caber na rotina.'
   },
   {
     question: 'Serve para quem quer reconquistar o ex?',
-    answer: 'O Magnetus III não promete reconquista nem controle sobre outra pessoa. O foco é devolver presença, eixo, clareza emocional, postura e valor percebido para você se relacionar melhor com quem for compatível com essa nova versão.'
+    answer: 'Ele não promete controlar ninguém. O foco é você mudar sua postura, parar de se diminuir e se relacionar com mais calma.'
   },
   {
     question: 'Isso funciona para mulheres solteiras ou comprometidas?',
-    answer: 'Sim. O protocolo é indicado para mulheres que querem parar de agir por ansiedade, carência ou autoabandono em relações amorosas, sociais e na forma como se posicionam no mundo.'
+    answer: 'Sim. Serve para mulheres que querem parar de agir por ansiedade, carência ou medo de perder.'
   },
   {
     question: 'Preciso fazer todos os dias seguidos?',
-    answer: 'A recomendação é seguir a sequência de 15 dias para manter continuidade. Se precisar pausar, você pode retomar de onde parou, mas o melhor resultado vem da prática consistente.'
+    answer: 'O ideal é seguir os 15 dias. Se precisar pausar, você volta de onde parou.'
   },
   {
     question: 'O que é o Dia 0?',
-    answer: 'O Dia 0 é a preparação antes do protocolo. Nele, você faz uma anamnese inicial e aprende o restart da respiração para regular o corpo antes de iniciar a jornada.'
+    answer: 'É a preparação. Você entende seu momento atual e aprende uma respiração para começar com mais calma.'
   },
   {
-    question: 'O que é a Matemática do Perdão?',
-    answer: 'É o material de transição do Dia 8. Ele não trata perdão como obrigação emocional, mas como uma decisão de liberação interna para fechar ciclos, soltar pesos e entrar na fase de magnetismo externo com mais leveza e presença.'
+    question: 'O que é a prática de liberação?',
+    answer: 'É um exercício para soltar pesos, fechar ciclos e parar de agir presa ao passado.'
   },
   {
-    question: 'O que é o Antídoto do Antivalor?',
-    answer: 'É um bônus diagnóstico que mostra comportamentos que drenam sua presença, vazam insegurança e enfraquecem seu valor percebido antes mesmo de você perceber.'
+    question: 'O que é o bônus O que evitar?',
+    answer: 'É um guia que mostra atitudes que passam insegurança e fazem você parecer disponível demais.'
   },
   {
     question: 'Esse material substitui terapia?',
@@ -159,7 +159,7 @@ const strategicFaqs = [
   },
   {
     question: 'O Magnetus ensina joguinho ou manipulação?',
-    answer: 'Não. O Magnetus III não ensina manipulação emocional. O foco é presença, regulação emocional, limites, comunicação, postura e reposicionamento interno.'
+    answer: 'Não. O foco é postura, calma, limites e comunicação clara.'
   }
 ];
 
@@ -167,6 +167,7 @@ function App() {
   const [openFaq, setOpenFaq] = React.useState(null);
   const [openStrategicFaq, setOpenStrategicFaq] = React.useState(null);
   const [diagnosticAnswers, setDiagnosticAnswers] = React.useState({});
+  const [diagnosticStep, setDiagnosticStep] = React.useState(0);
 
   const toggleFaq = (index) => {
     if (openFaq === index) {
@@ -187,11 +188,11 @@ function App() {
   const faqs = [
     {
       question: "O acesso é imediato?",
-      answer: "Sim, direto no seu e-mail após a confirmação do pagamento. Você poderá começar o protocolo hoje mesmo."
+      answer: "Sim. Depois do pagamento, o acesso chega no seu e-mail e você já pode começar."
     },
     {
       question: "Serve para quem quer reconquistar o ex?",
-      answer: "Sim, desde que o foco não seja implorar atenção, mas reconstruir postura, contraste e valor percebido. O material conduz essa mudança de presença antes de qualquer tentativa de aproximação."
+      answer: "Serve se o seu foco for parar de implorar atenção e mudar sua postura. Não promete controlar ninguém."
     },
     {
       question: "Tenho vergonha, o nome aparece na fatura?",
@@ -199,15 +200,15 @@ function App() {
     },
     {
       question: "O que exatamente eu recebo?",
-      answer: "Você recebe o Magnetus principal, o Manual Dia 0, o ritual Matemática da Liberação e o bônus Antídoto Antivalor. A proposta é entregar um caminho de aplicação, não apenas leitura passiva."
+      answer: "Você recebe o guia principal, o guia do começo, a prática de liberação e o bônus O que evitar."
     },
     {
       question: "Quanto tempo preciso por dia?",
-      answer: "O ideal é reservar alguns minutos por dia para leitura, reflexão e aplicação. O protocolo foi pensado para caber em uma rotina real, sem exigir horas de estudo."
+      answer: "Alguns minutos por dia já ajudam. O material foi feito para caber na rotina."
     },
     {
       question: "Isso é sobre manipular alguém?",
-      answer: "Não. O foco é parar de agir por escassez, ansiedade e reatividade. A mudança central é de postura, limites, leitura comportamental e presença."
+      answer: "Não. O foco é parar de agir por ansiedade, ter mais limite e falar com mais clareza."
     },
     {
       question: "Tem garantia?",
@@ -217,6 +218,15 @@ function App() {
 
   const answeredCount = Object.keys(diagnosticAnswers).length;
   const diagnosticComplete = answeredCount === diagnosticQuestions.length;
+  const currentDiagnostic = diagnosticQuestions[diagnosticStep];
+
+  const answerDiagnosticQuestion = (questionIndex, answer) => {
+    setDiagnosticAnswers((current) => ({ ...current, [questionIndex]: answer }));
+
+    if (questionIndex < diagnosticQuestions.length - 1) {
+      setDiagnosticStep(questionIndex + 1);
+    }
+  };
 
   return (
     <div className="app">
@@ -228,13 +238,13 @@ function App() {
         <div className="hero-shell">
           <div className="hero-badge">
             <Sparkles size={18} />
-            Protocolo guiado de presença feminina
+            Guia prático para ser mais lembrada
           </div>
           <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="hero-image-link" aria-label="Comprar Magnetus III">
             <div className="hero-copy-overlay">
-              <h1>Pare de se abandonar por amor.</h1>
+              <h1>Pare de se apagar por amor.</h1>
               <p>
-                Um protocolo guiado de 15 dias para regular seu corpo, reconhecer padrões emocionais e construir presença, limites e magnetismo pessoal sem se abandonar por amor.
+                Um guia de 15 dias para acalmar a ansiedade, parar de correr atrás e se posicionar com mais segurança.
               </p>
             </div>
           <img 
@@ -243,7 +253,7 @@ function App() {
               className="hero-image"
           />
             <span className="hero-image-cta">
-              Quero acessar o protocolo
+              Quero começar agora
               <ArrowRight size={18} />
             </span>
         </a>
@@ -259,39 +269,56 @@ function App() {
       <section id="questionario" className="mobile-lead-section mobile-only" aria-labelledby="questionario-title">
         <div className="mobile-lead-shell">
           <p className="mobile-lead-kicker">Diagnóstico rápido</p>
-          <h2 id="questionario-title">Antes de comprar, nomeie onde você está se apagando.</h2>
+          <h2 id="questionario-title">Descubra onde você está se apagando.</h2>
           <p className="mobile-lead-intro">
-            Três respostas bastam para entender se o seu padrão hoje pede mais regulação, limite ou reposicionamento.
+            Responda uma pergunta por vez. No final, você vê o próximo passo mais claro.
           </p>
 
           <div className="mobile-lead-questions">
-            {diagnosticQuestions.map((item, questionIndex) => (
-              <fieldset className="mobile-lead-question" key={item.question}>
-                <legend>{item.question}</legend>
-                {item.answers.map((answer) => {
-                  const selected = diagnosticAnswers[questionIndex] === answer;
+            <div className="mobile-lead-progress" aria-label={`Pergunta ${diagnosticStep + 1} de ${diagnosticQuestions.length}`}>
+              <span>Pergunta {diagnosticStep + 1} de {diagnosticQuestions.length}</span>
+              <div>
+                {diagnosticQuestions.map((item, index) => (
+                  <i key={item.question} className={index <= diagnosticStep ? 'active' : ''} />
+                ))}
+              </div>
+            </div>
 
-                  return (
-                    <button
-                      type="button"
-                      key={answer}
-                      className={selected ? 'selected' : ''}
-                      onClick={() => setDiagnosticAnswers((current) => ({ ...current, [questionIndex]: answer }))}
-                    >
-                      {answer}
-                    </button>
-                  );
-                })}
-              </fieldset>
-            ))}
+            <fieldset className="mobile-lead-question" key={currentDiagnostic.question}>
+              <legend>{currentDiagnostic.question}</legend>
+              {currentDiagnostic.answers.map((answer) => {
+                const selected = diagnosticAnswers[diagnosticStep] === answer;
+
+                return (
+                  <button
+                    type="button"
+                    key={answer}
+                    className={selected ? 'selected' : ''}
+                    onClick={() => answerDiagnosticQuestion(diagnosticStep, answer)}
+                  >
+                    {answer}
+                  </button>
+                );
+              })}
+            </fieldset>
+
+            {diagnosticStep > 0 && (
+              <button
+                type="button"
+                className="mobile-lead-back"
+                onClick={() => setDiagnosticStep((step) => Math.max(0, step - 1))}
+              >
+                Voltar
+              </button>
+            )}
           </div>
 
           <div className={diagnosticComplete ? 'mobile-lead-result is-visible' : 'mobile-lead-result'}>
             <p>
-              Seu padrão não precisa virar identidade. O próximo passo é seguir um roteiro que devolva presença antes de qualquer tentativa de agradar.
+              Você não precisa continuar tentando ser escolhida. O próximo passo é seguir um roteiro simples para agir com mais calma, limite e presença.
             </p>
             <a href="#oferta">
-              Ver o protocolo indicado
+              Ver o guia indicado
               <ArrowRight size={18} />
             </a>
           </div>
@@ -303,15 +330,15 @@ function App() {
         <div className="container">
           <div className="pain-content">
             <h2 className="section-title">
-              Você é forte na vida, mas <span className="text-bordeaux">perde o eixo</span> quando gosta de alguém?
+              Você é forte para tudo, mas <span className="text-bordeaux">se perde</span> quando gosta de alguém?
             </h2>
             <div className="pain-text">
               <p>
-                Você trabalha, resolve, sustenta tanta coisa... mas quando o assunto é vínculo, começa a esperar mensagem, medir palavras, se adaptar demais e aceitar menos do que merece só para não perder a conexão.
+                Você trabalha, resolve problemas e segura muita coisa. Mas quando gosta de alguém, começa a esperar mensagem, medir palavras e aceitar menos do que merece.
               </p>
               <div className="final-blow">
                 <p>
-                  <strong>Não é falta de sorte.</strong> É um <span className="highlight">padrão emocional aprendido</span>. Enquanto ele continua invisível, você tende a repetir escolhas, reações e entregas que enfraquecem sua presença.
+                  <strong>Não é falta de sorte.</strong> É um <span className="highlight">jeito aprendido de agir</span>. Quando você não percebe isso, repete as mesmas escolhas e se sente cada vez menos valorizada.
                 </p>
               </div>
             </div>
@@ -324,9 +351,9 @@ function App() {
           <div className="fit-grid">
             <div className="fit-copy">
               <span className="eyebrow">Antes de comprar</span>
-              <h2 className="section-title">Este protocolo é para quem quer parar de se abandonar para manter um vínculo.</h2>
+              <h2 className="section-title">Este guia é para quem quer parar de se diminuir para manter alguém perto.</h2>
               <p>
-                Magnetus III não promete controle sobre outra pessoa. A promessa é mais profunda: devolver o comando da sua postura, da sua presença e da forma como você se comunica quando existe desejo envolvido.
+                Magnetus III não promete controlar outra pessoa. Ele ajuda você a mudar sua postura, falar com mais clareza e parar de agir por medo de perder.
               </p>
             </div>
             <div className="fit-panel">
@@ -344,32 +371,32 @@ function App() {
       {/* SEÇÃO ANTES VS DEPOIS */}
       <section className="comparison-section">
         <div className="container">
-          <h2 className="section-title text-center text-white">A Metamorfose da Presença</h2>
+          <h2 className="section-title text-center text-white">Antes e depois do Magnetus</h2>
           <div className="comparison-grid">
             <div className="comparison-card before">
               <div className="card-header">
                 <XCircle className="icon-error" />
-                <h3>Antes do Protocolo</h3>
+                <h3>Antes</h3>
               </div>
               <ul className="comparison-list">
-                <li>Estado constante de alerta emocional</li>
-                <li>Busca por aprovação externa</li>
-                <li>Comunicação que transmite ansiedade e insegurança</li>
-                <li>Ser a "mulher legal" que sempre aceita menos</li>
-                <li>Sensação de insuficiência e invisibilidade</li>
+                <li>Ficar em alerta esperando resposta</li>
+                <li>Buscar aprovação o tempo todo</li>
+                <li>Falar com medo de desagradar</li>
+                <li>Aceitar pouco para não perder a pessoa</li>
+                <li>Sentir que não é vista de verdade</li>
               </ul>
             </div>
             <div className="comparison-card after">
               <div className="card-header">
                 <CheckCircle className="icon-success" />
-                <h3>Depois do Magnetus III</h3>
+                <h3>Depois</h3>
               </div>
               <ul className="comparison-list">
-                <li>Corpo mais regulado antes de reagir</li>
-                <li>Mais clareza para perceber padrões</li>
-                <li>Comunicação com menos ansiedade e mais presença</li>
-                <li>Limites mais firmes sem precisar endurecer</li>
-                <li>Magnetismo como consequência de postura interna</li>
+                <li>Mais calma antes de responder</li>
+                <li>Mais clareza para enxergar seus padrões</li>
+                <li>Comunicação mais segura</li>
+                <li>Limites sem culpa</li>
+                <li>Mais presença sem fazer esforço para agradar</li>
               </ul>
             </div>
           </div>
@@ -381,12 +408,12 @@ function App() {
           <div className="method-grid">
             <div className="method-intro">
               <span className="eyebrow eyebrow-light">Como você usa</span>
-              <h2 className="section-title text-white">Um protocolo de 15 dias para trocar ansiedade por direção.</h2>
+              <h2 className="section-title text-white">15 dias para trocar ansiedade por atitude.</h2>
               <p>
-                O processo começa no Dia 0, com anamnese e restart da respiração. Depois vem a fase de magnetismo interior, a transição da Matemática da Liberação e a fase de magnetismo exterior.
+                Você começa se acalmando, entende seus padrões e depois aprende como agir, falar e se posicionar sem parecer carente.
               </p>
               <a href="#oferta" className="method-link">
-                Ver oferta completa
+                Ver o que está incluso
                 <ArrowRight size={18} />
               </a>
             </div>
@@ -407,8 +434,8 @@ function App() {
       <section className="solution-section">
         <div className="container">
           <div className="section-header text-center mb-16">
-            <h2 className="section-title">O Sistema Operacional de Alto Valor</h2>
-            <p className="section-subtitle">A solução completa que une a poda estratégica à construção de poder.</p>
+            <h2 className="section-title">O que você vai receber</h2>
+            <p className="section-subtitle">Materiais simples para você aplicar no dia a dia.</p>
           </div>
 
           <div className="products-detailed-grid">
@@ -418,10 +445,10 @@ function App() {
                 <img src="/images/capa_ebook_magnetus.jpeg" alt="Magnetus III" className="premium-book-img" />
               </div>
               <div className="product-info">
-                <span className="product-tag">Manual Principal</span>
-                <h3>MAGNETUS III: A Engenharia da Presença</h3>
+                <span className="product-tag">Guia principal</span>
+                <h3>MAGNETUS III: Guia de Presença</h3>
                 <p>
-                  Um protocolo guiado de 15 dias para regular o corpo, reconhecer padrões emocionais e desenvolver presença, limites e magnetismo pessoal. Você aprende a sair do automático, parar de correr atrás e se posicionar com mais calma, clareza e valor.
+                  Um guia de 15 dias para acalmar a ansiedade, perceber seus padrões e agir com mais presença, limite e segurança.
                 </p>
               </div>
             </div>
@@ -429,13 +456,13 @@ function App() {
             {/* Ebook 2 */}
             <div className="product-detail-card reverse">
               <div className="product-image">
-                <img src="/images/capa_ebook_antidoto.jpg" alt="Antidoto do Antivalor" className="premium-book-img" />
+                <img src="/images/capa_ebook_antidoto.jpg" alt="Bônus O que evitar" className="premium-book-img" />
               </div>
               <div className="product-info">
-                <span className="product-tag">O Diagnóstico</span>
-                <h3>ANTÍDOTO DO ANTIVALOR: O Manual do Que Evitar</h3>
+                <span className="product-tag">Bônus prático</span>
+                <h3>O QUE EVITAR: atitudes que diminuem seu valor</h3>
                 <p>
-                  Enquanto o Magnetus mostra o que construir, o Antídoto revela o que interromper: excesso de disponibilidade, reatividade, carência disfarçada de entrega, explicações demais e padrões que comunicam insegurança antes mesmo de você falar.
+                  Um bônus para perceber atitudes como se explicar demais, ficar disponível demais, reagir por ansiedade e aceitar pouco.
                 </p>
               </div>
             </div>
@@ -443,24 +470,24 @@ function App() {
           
           <div className="combo-highlight-box">
             <div className="combo-image-wrap">
-              <img src="/images/bonus-antivalor-secret.jpg" alt="Combo Magnetus III e Antidoto do Antivalor" className="combo-image" />
+              <img src="/images/bonus-antivalor-secret.jpg" alt="Combo Magnetus III e bônus O que evitar" className="combo-image" />
             </div>
             <div className="combo-content">
               <Sparkles className="text-gold mb-4" size={32} />
-              <h3>O COMBO: Equilíbrio Perfeito</h3>
+              <h3>O combo completo</h3>
               <p>
-                Enquanto o <em>Antivalor</em> limpa o terreno e estanca a perda de autoridade, o <em>Magnetus III</em> edifica a estrutura da presença magnética. É o equilíbrio entre interromper o que drena seu valor e construir uma presença que se sustenta.
+                O guia principal mostra o que fazer. O bônus mostra o que evitar. Juntos, eles ajudam você a parar de se diminuir e começar a se posicionar melhor.
               </p>
-              <p className="result-highlight">Atração real como consequência biológica, não como esforço.</p>
+              <p className="result-highlight">Mais presença, menos desespero para ser escolhida.</p>
             </div>
           </div>
 
           <div className="deliverables-section">
             <div className="deliverables-copy">
               <span className="eyebrow">O que chega para você</span>
-              <h2>Você recebe quatro peças para atravessar o protocolo com começo, meio e aplicação.</h2>
+              <h2>Você recebe quatro materiais simples para começar e aplicar.</h2>
               <p>
-                Cada material tem uma função dentro da jornada: preparar o corpo, conduzir os 15 dias, atravessar a virada do Dia 8 e interromper padrões que drenam sua presença.
+                Cada material tem uma função: começar com calma, seguir os 15 dias, virar a chave emocional e evitar atitudes que te diminuem.
               </p>
             </div>
             <div className="deliverables-grid">
@@ -481,9 +508,9 @@ function App() {
         <div className="container">
           <div className="price-anchor-header">
             <span className="eyebrow">Perspectiva real</span>
-            <h2 id="price-anchor-title">Você gasta mais do que isso com coisas que não mudam nada na sua vida.</h2>
+            <h2 id="price-anchor-title">Você já gasta mais do que isso com coisas que passam rápido.</h2>
             <p>
-              Antes de pensar no preço, olhe para o que você já investe — sem retorno emocional, sem transformação, sem direção.
+              Aqui, o investimento é em uma mudança que você leva para seus relacionamentos e para sua postura.
             </p>
           </div>
 
@@ -556,8 +583,8 @@ function App() {
               <div className="anchor-item">
                 <div className="anchor-item-icon worth">🧠</div>
                 <div className="anchor-item-label">
-                  Regulação emocional
-                  <small>Parar de reagir por impulso</small>
+                  Mais calma
+                  <small>Responder sem agir no impulso</small>
                 </div>
                 <span className="anchor-item-price gold">✓</span>
               </div>
@@ -565,8 +592,8 @@ function App() {
               <div className="anchor-item">
                 <div className="anchor-item-icon worth">🪞</div>
                 <div className="anchor-item-label">
-                  Reconhecimento de padrões
-                  <small>Enxergar o que te sabota</small>
+                  Clareza
+                  <small>Perceber o que te faz correr atrás</small>
                 </div>
                 <span className="anchor-item-price gold">✓</span>
               </div>
@@ -574,8 +601,8 @@ function App() {
               <div className="anchor-item">
                 <div className="anchor-item-icon worth">👑</div>
                 <div className="anchor-item-label">
-                  Presença e magnetismo
-                  <small>Mudar como o outro te percebe</small>
+                  Mais presença
+                  <small>Ser vista com mais valor</small>
                 </div>
                 <span className="anchor-item-price gold">✓</span>
               </div>
@@ -583,8 +610,8 @@ function App() {
               <div className="anchor-item">
                 <div className="anchor-item-icon worth">🛡️</div>
                 <div className="anchor-item-label">
-                  Limites sem endurecer
-                  <small>Se posicionar com calma</small>
+                  Limites
+                  <small>Se posicionar sem culpa</small>
                 </div>
                 <span className="anchor-item-price gold">✓</span>
               </div>
@@ -592,8 +619,8 @@ function App() {
               <div className="anchor-item">
                 <div className="anchor-item-icon worth">📖</div>
                 <div className="anchor-item-label">
-                  Protocolo guiado de 15 dias
-                  <small>Começo, meio e aplicação prática</small>
+                  Guia de 15 dias
+                  <small>Um passo por dia</small>
                 </div>
                 <span className="anchor-item-price gold">✓</span>
               </div>
@@ -609,7 +636,7 @@ function App() {
                 <span className="installments">ou 12x de R$ 6,99</span>
               </div>
               <p>
-                Menos que uma manicure. Mais valioso que meses de tentativa sozinha. Um investimento que muda a forma como você se posiciona em todos os seus relacionamentos.
+                Menos que uma manicure. Mais útil do que continuar tentando sozinha sem saber o que mudar.
               </p>
               <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="price-anchor-verdict-cta">
                 QUERO COMEÇAR POR R$ 69,90
@@ -624,13 +651,13 @@ function App() {
         <div className="container">
           <div className="clear-offer-grid">
             <div className="clear-offer-copy">
-              <span className="eyebrow eyebrow-light">Oferta clara</span>
+              <span className="eyebrow eyebrow-light">Oferta simples</span>
               <h2 id="clear-offer-title">Comece hoje o Magnetus III</h2>
               <p className="clear-offer-subtitle">
-                Um protocolo digital de 15 dias para sair da ansiedade, recuperar sua presença e construir magnetismo real.
+                Um guia digital de 15 dias para diminuir a ansiedade e se posicionar melhor.
               </p>
               <p className="clear-offer-text">
-                Você não recebe apenas um ebook. Você recebe uma jornada guiada com começo, meio e aplicação prática para parar de agir por ansiedade e voltar ao próprio centro.
+                Você recebe materiais práticos para parar de agir no impulso, entender seus padrões e recuperar sua segurança.
               </p>
             </div>
 
@@ -660,7 +687,7 @@ function App() {
               </div>
 
               <p className="clear-offer-reinforcement">
-                Se você está pronta para parar de se perder quando gosta e voltar para a sua presença, este é o seu próximo passo.
+                Se você quer parar de se perder quando gosta de alguém, comece por aqui.
               </p>
 
               <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="clear-offer-button">
@@ -705,7 +732,7 @@ function App() {
 
           <div className="strategic-faq-close">
             <p>
-              Se a sua dúvida principal era saber se este protocolo é claro, prático e aplicável, agora você já sabe: o Magnetus III foi criado para conduzir você passo a passo.
+              Se você queria saber se é simples e prático, a resposta é sim: o Magnetus III foi feito para conduzir você passo a passo.
             </p>
             <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="strategic-faq-button">
               QUERO COMEÇAR AGORA
@@ -734,9 +761,9 @@ function App() {
               <strong>Esta oferta inclui:</strong>
               <ul>
                 <li>Magnetus III</li>
-                <li>Manual Dia 0 / Restart da Respiração</li>
-                <li>Ritual Matemática da Liberação</li>
-                <li>Bônus Antídoto do Antivalor</li>
+                <li>Guia do começo</li>
+                <li>Prática de liberação emocional</li>
+                <li>Bônus O que evitar</li>
                 <li>Garantia de 7 dias</li>
                 <li>Acesso imediato</li>
                 <li>Compra segura</li>
@@ -746,17 +773,17 @@ function App() {
               <div>
                 <ShieldCheck size={22} />
                 <strong>Garantia de 7 dias</strong>
-                <span>Você compra com tempo para avaliar se o material faz sentido para você.</span>
+                <span>Você tem tempo para ver se o material faz sentido para você.</span>
               </div>
               <div>
                 <LockKeyhole size={22} />
                 <strong>Checkout seguro</strong>
-                <span>Pagamento processado por plataforma externa, com acesso digital após confirmação.</span>
+                <span>Pagamento seguro e acesso digital após a confirmação.</span>
               </div>
               <div>
                 <Clock3 size={22} />
                 <strong>Começo imediato</strong>
-                <span>A proposta é simples: comprar, acessar e iniciar o protocolo hoje.</span>
+                <span>Você pode comprar, acessar e começar hoje.</span>
               </div>
             </div>
           </div>
@@ -772,21 +799,21 @@ function App() {
             </div>
             <div className="author-content">
               <h2 className="author-name">Sol Lima</h2>
-              <h3 className="author-subtitle text-gold">Autora do Magnetus III e criadora do Método Posicione-se™</h3>
+              <h3 className="author-subtitle text-gold">Autora do Magnetus III</h3>
               
               <div className="author-bio">
-                <p className="author-highlight"><strong>Eu não criei este protocolo para ensinar mulheres a fingirem atração. Eu criei para conduzir mulheres de volta à própria presença.</strong></p>
+                <p className="author-highlight"><strong>Eu não criei este guia para ensinar joguinho. Eu criei para ajudar mulheres a voltarem para si.</strong></p>
                 
-                <p>Antes de transformar essa jornada em método, eu precisei atravessar meus próprios padrões: autoabandono, ansiedade relacional, ressentimentos antigos, tentativas de caber no desejo do outro e a sensação de viver esperando alguma forma de escolha externa.</p>
+                <p>Antes de criar o Magnetus, eu também vivi ansiedade, medo de perder, vontade de agradar e a sensação de esperar ser escolhida.</p>
                 
-                <p>O Magnetus III nasceu desse lugar: não da teoria vazia, mas da experiência de quem entendeu, no corpo, que uma mulher perde magnetismo quando perde presença.</p>
+                <p>O Magnetus nasceu dessa experiência: quando uma mulher perde a si mesma, ela também perde força, brilho e segurança.</p>
                 
-                <p>Ao longo da minha própria reconstrução, percebi que atração não começa no outro. Começa no sistema nervoso, na postura, nos limites, na forma como uma mulher responde ao que sente e na decisão de parar de se trair para manter vínculos que a diminuem.</p>
+                <p>A mudança começa quando você para de agir por desespero e aprende a responder com mais calma, limite e clareza.</p>
                 
-                <p>Por isso, este protocolo não promete controle sobre ninguém. Ele entrega uma estrutura para você se observar, regular seu corpo, reconhecer padrões emocionais, atravessar a liberação interna e construir presença com mais clareza, firmeza e valor.</p>
+                <p>Por isso, este guia não promete controlar ninguém. Ele entrega um caminho para você se observar, mudar atitudes e voltar a se posicionar melhor.</p>
                 
                 <div className="author-quote">
-                  <p>"Credibilidade, para mim, não nasce de parecer perfeita. Nasce de ter atravessado a dor, nomeado o padrão e transformado isso em direção prática."</p>
+                  <p>"Você não precisa parecer perfeita. Precisa parar de se abandonar para ser escolhida."</p>
                 </div>
               </div>
             </div>
@@ -802,11 +829,11 @@ function App() {
             <div className="personal-note-content">
               <p className="eyebrow">Uma nota pessoal da Sol</p>
               <blockquote>
-                <p>Eu sei o que é ouvir que você precisa perdoar, superar, ser forte e seguir em frente — enquanto por dentro ninguém sabe o tamanho do que ficou preso.</p>
-                <p>Eu sei o que é tentar amar carregando ressentimento, tensão e memória de dor no corpo. E também sei o quanto isso contamina a presença, os vínculos, as escolhas e até a forma como uma mulher se permite ser vista.</p>
-                <p>O Magnetus III não nasceu para transformar dor em discurso bonito. Nasceu para transformar dor em direção.</p>
-                <p>Eu não acredito em atração construída por joguinho. Eu acredito em presença construída por verdade, corpo regulado, limite, clareza e prática.</p>
-                <p>Se você chegou até aqui, talvez não seja porque precisa ser mais desejada. Talvez seja porque está cansada de se abandonar para caber no desejo de alguém.</p>
+                <p>Eu sei como é tentar ser forte por fora e, por dentro, se sentir cansada de esperar atenção.</p>
+                <p>Eu sei como é gostar de alguém e começar a medir cada palavra, cada silêncio e cada resposta.</p>
+                <p>O Magnetus III nasceu para transformar essa dor em atitude prática.</p>
+                <p>Eu não acredito em joguinho. Eu acredito em calma, limite, clareza e prática.</p>
+                <p>Se você chegou até aqui, talvez esteja cansada de se diminuir para caber no desejo de alguém.</p>
               </blockquote>
               <p className="personal-note-signature">— Sol Lima</p>
             </div>
@@ -843,23 +870,23 @@ function App() {
       <section className="final-emotional-cta" aria-labelledby="final-emotional-title">
         <div className="container">
           <div className="final-emotional-shell">
-            <p className="final-emotional-kicker">Fechamento da jornada</p>
+            <p className="final-emotional-kicker">Último passo</p>
             <h2 id="final-emotional-title">
               Você não precisa continuar se perdendo quando gosta de alguém.
             </h2>
             <p className="final-emotional-subtitle">
-              Existe um caminho mais claro, mais calmo e mais seu.
+              Existe um jeito mais calmo, claro e seguro de se posicionar.
             </p>
 
             <div className="final-emotional-copy">
               <p>
-                Talvez você tenha passado tempo demais tentando ser escolhida, tentando ser compreendida, tentando provar valor, tentando parecer leve enquanto por dentro estava em alerta.
+                Talvez você tenha passado tempo demais tentando ser escolhida, tentando provar valor e tentando parecer tranquila enquanto por dentro estava ansiosa.
               </p>
               <p>
-                Mas a sua presença não precisa continuar nascendo da ansiedade.
+                Mas você não precisa continuar vivendo desse jeito.
               </p>
               <p>
-                O Magnetus III foi criado para conduzir você de volta ao próprio centro: com direção, prática, respiração, consciência emocional, limite e reposicionamento.
+                O Magnetus III foi criado para ajudar você a voltar para si: com prática, respiração, calma, limite e atitudes mais claras.
               </p>
               <p>
                 Você não precisa virar outra mulher. Você precisa parar de abandonar a mulher que já existe em você.
@@ -871,7 +898,7 @@ function App() {
             </p>
 
             <p className="final-emotional-before-button">
-              Se você quer começar essa jornada hoje, o próximo passo está abaixo.
+              Se você quer começar hoje, o próximo passo está abaixo.
             </p>
 
             <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="final-emotional-button">
@@ -882,14 +909,14 @@ function App() {
               Acesso imediato • 100% digital • Garantia de 7 dias
             </p>
             <p className="final-emotional-signature">
-              Magnetus III — Protocolo de Presença Feminina em 15 dias.
+              Magnetus III — guia de 15 dias para presença feminina.
             </p>
           </div>
         </div>
       </section>
 
       <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="sticky-cta">
-        Quero acessar o protocolo
+        Quero começar agora
         <ArrowRight size={18} />
       </a>
 

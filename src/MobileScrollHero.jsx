@@ -7,7 +7,6 @@ export default function MobileScrollHero({ targetId = 'questionario' }) {
   const canvasRef = React.useRef(null);
   const imagesRef = React.useRef([]);
   const firstCaptionRef = React.useRef(null);
-  const secondCaptionRef = React.useRef(null);
   const ctaRef = React.useRef(null);
   const frameIndexRef = React.useRef(1);
   const requestRef = React.useRef(null);
@@ -74,12 +73,6 @@ export default function MobileScrollHero({ targetId = 'questionario' }) {
       firstCaptionRef.current.style.opacity = String(1 - p);
       firstCaptionRef.current.style.transform = `translateY(${-32 * p}px)`;
       firstCaptionRef.current.style.pointerEvents = progress < 0.16 ? 'auto' : 'none';
-    }
-
-    if (secondCaptionRef.current) {
-      const p = Math.min(1, Math.max(0, (progress - 0.68) / 0.18));
-      secondCaptionRef.current.style.opacity = String(p);
-      secondCaptionRef.current.style.transform = `translateY(${28 - 28 * p}px)`;
     }
 
     if (ctaRef.current) {
@@ -208,15 +201,7 @@ export default function MobileScrollHero({ targetId = 'questionario' }) {
           <h1>Cansada de se sentir invisível?</h1>
         </div>
 
-        <div className="mobile-scroll-hero__caption mobile-scroll-hero__caption--second" ref={secondCaptionRef}>
-          <h2>
-            Você não precisa se diminuir
-            <span>para ser vista.</span>
-          </h2>
-        </div>
-
         <div className="mobile-scroll-hero__cta" ref={ctaRef}>
-          <p>Responda ao diagnóstico e descubra onde a sua presença está sendo apagada.</p>
           <button type="button" onClick={scrollToQuestionnaire}>
             Quero me destacar
             <span aria-hidden="true">→</span>
