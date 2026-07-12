@@ -433,7 +433,7 @@ function App() {
             {/* Ebook 1 */}
             <div className="product-detail-card">
               <div className="product-image">
-                <img src="/images/capa_ebook_magnetus.jpeg" alt="Magnetus III" className="premium-book-img" />
+                <img src="/images/magnetus-iii.png" alt="Magnetus III" className="premium-book-img" />
               </div>
               <div className="product-info">
                 <span className="product-tag">Guia principal</span>
@@ -447,7 +447,7 @@ function App() {
             {/* Ebook 2 */}
             <div className="product-detail-card reverse">
               <div className="product-image">
-                <img src="/images/capa_ebook_antidoto.jpg" alt="Bônus O que evitar" className="premium-book-img" />
+                <img src="/images/antidoto.png" alt="Bônus O que evitar" className="premium-book-img" />
               </div>
               <div className="product-info">
                 <span className="product-tag">Bônus prático</span>
@@ -461,7 +461,7 @@ function App() {
           
           <div className="combo-highlight-box">
             <div className="combo-image-wrap">
-              <img src="/images/bonus-antivalor-secret.jpg" alt="Combo Magnetus III e bônus O que evitar" className="combo-image" />
+              <img src="/images/magnetus-e-antidoto.png" alt="Combo Magnetus III e bônus O que evitar" className="combo-image" />
             </div>
             <div className="combo-content">
               <Sparkles className="text-gold mb-4" size={32} />
@@ -743,7 +743,7 @@ function App() {
             </div>
             <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="offer-image-link" aria-label="Comprar combo Magnetus III">
               <img 
-                src="/images/oferta_combo_nova.jpg" 
+                src="/images/valor-oferta.png" 
                 alt="Magnetus III - Oferta Especial" 
                 className="offer-image"
               />
