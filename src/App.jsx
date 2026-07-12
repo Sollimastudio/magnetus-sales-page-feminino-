@@ -236,28 +236,19 @@ function App() {
 
       <header className="hero-section desktop-hero-section">
         <div className="hero-shell">
-          <div className="hero-badge">
-            <Sparkles size={18} />
-            Guia prático para ser mais lembrada
-          </div>
-          <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="hero-image-link" aria-label="Comprar Magnetus III">
-            <div className="hero-copy-overlay">
-              <h1>Pare de se apagar por amor.</h1>
-              <p>
-                Um guia de 15 dias para acalmar a ansiedade, parar de correr atrás e se posicionar com mais segurança.
-              </p>
+          <div className="hero-copy-overlay">
+            <div className="hero-badge">
+              <Sparkles size={18} />
+              Guia prático para ser mais lembrada
             </div>
-          <img 
-            src="/images/magnetus_feminina_hero.png" 
-            alt="Magnetus III - Ative sua Presença" 
-              className="hero-image"
-          />
-            <span className="hero-image-cta">
+            <h1>Pare de se apagar por amor.</h1>
+            <p>
+              Um guia de 15 dias para acalmar a ansiedade, parar de correr atrás e se posicionar com mais segurança.
+            </p>
+            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="hero-image-cta">
               Quero começar agora
               <ArrowRight size={18} />
-            </span>
-        </a>
-          <div className="hero-actions">
+            </a>
             <p className="secure-note">
               <LockKeyhole size={16} />
               Compra segura, acesso imediato e discreto
