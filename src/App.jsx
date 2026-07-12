@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, BadgeCheck, ChevronDown, Clock3, FileText, LockKeyhole, ShieldCheck, Sparkles, XCircle, CheckCircle } from 'lucide-react';
 import './App.css';
+import MobileScrollHero from './MobileScrollHero.jsx';
 
 const checkoutUrl = 'https://pay.kiwify.com.br/m8cGccz';
 
@@ -72,6 +73,33 @@ const clearOfferBenefits = [
   'Compra segura'
 ];
 
+const diagnosticQuestions = [
+  {
+    question: 'Quando você gosta de alguém, o que mais acontece?',
+    answers: [
+      'Eu espero sinais e me adapto demais',
+      'Eu fico ansiosa e tento controlar a resposta',
+      'Eu me calo para não parecer intensa'
+    ]
+  },
+  {
+    question: 'Onde você sente que perde presença?',
+    answers: [
+      'Nas relações afetivas',
+      'Na forma como comunico meus limites',
+      'Na sensação de precisar provar valor'
+    ]
+  },
+  {
+    question: 'O que você mais quer reconstruir agora?',
+    answers: [
+      'Clareza emocional',
+      'Postura e magnetismo',
+      'Limites sem endurecer'
+    ]
+  }
+];
+
 const strategicFaqs = [
   {
     question: 'O acesso é imediato?',
@@ -138,6 +166,7 @@ const strategicFaqs = [
 function App() {
   const [openFaq, setOpenFaq] = React.useState(null);
   const [openStrategicFaq, setOpenStrategicFaq] = React.useState(null);
+  const [diagnosticAnswers, setDiagnosticAnswers] = React.useState({});
 
   const toggleFaq = (index) => {
     if (openFaq === index) {
@@ -186,9 +215,16 @@ function App() {
     }
   ];
 
+  const answeredCount = Object.keys(diagnosticAnswers).length;
+  const diagnosticComplete = answeredCount === diagnosticQuestions.length;
+
   return (
     <div className="app">
-      <header className="hero-section">
+      <div className="mobile-only">
+        <MobileScrollHero />
+      </div>
+
+      <header className="hero-section desktop-hero-section">
         <div className="hero-shell">
           <div className="hero-badge">
             <Sparkles size={18} />
@@ -219,6 +255,48 @@ function App() {
           </div>
         </div>
       </header>
+
+      <section id="questionario" className="mobile-lead-section mobile-only" aria-labelledby="questionario-title">
+        <div className="mobile-lead-shell">
+          <p className="mobile-lead-kicker">Diagnóstico rápido</p>
+          <h2 id="questionario-title">Antes de comprar, nomeie onde você está se apagando.</h2>
+          <p className="mobile-lead-intro">
+            Três respostas bastam para entender se o seu padrão hoje pede mais regulação, limite ou reposicionamento.
+          </p>
+
+          <div className="mobile-lead-questions">
+            {diagnosticQuestions.map((item, questionIndex) => (
+              <fieldset className="mobile-lead-question" key={item.question}>
+                <legend>{item.question}</legend>
+                {item.answers.map((answer) => {
+                  const selected = diagnosticAnswers[questionIndex] === answer;
+
+                  return (
+                    <button
+                      type="button"
+                      key={answer}
+                      className={selected ? 'selected' : ''}
+                      onClick={() => setDiagnosticAnswers((current) => ({ ...current, [questionIndex]: answer }))}
+                    >
+                      {answer}
+                    </button>
+                  );
+                })}
+              </fieldset>
+            ))}
+          </div>
+
+          <div className={diagnosticComplete ? 'mobile-lead-result is-visible' : 'mobile-lead-result'}>
+            <p>
+              Seu padrão não precisa virar identidade. O próximo passo é seguir um roteiro que devolva presença antes de qualquer tentativa de agradar.
+            </p>
+            <a href="#oferta">
+              Ver o protocolo indicado
+              <ArrowRight size={18} />
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* 2. O DEDO NA FERIDA (Conexão Emocional) */}
       <section className="pain-section">
