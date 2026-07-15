@@ -5,8 +5,14 @@ import { ArrowDown, ArrowRight, BookOpen, Brain, Check, CheckCircle2, ChevronDow
 import './App.css';
 
 const CHECKOUT = 'https://pay.kiwify.com.br/m8cGccz';
+const SUPPORT_URL = 'https://wa.me/5562991879936?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20com%20o%20Magnetus%20III.';
 const PIXEL_ID = '630829586054528';
 const CAMPAIGN_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+const realPreviews = [
+  ['/images/preview-dia-12.webp', 'Dia 12', 'Você não está esperando resgate', 'Autonomia emocional e força para se sustentar', 720, 932],
+  ['/images/preview-dia-9.webp', 'Dia 9', 'Você não precisa ser perfeita', 'Integridade, presença e autenticidade', 720, 932],
+  ['/images/preview-ciencia.webp', 'Fundamentação', 'Ciência e formação de hábitos', 'Por que repetição, contexto e consistência importam', 720, 452],
+];
 
 const symptoms = ['Espera uma mensagem e perde a paz', 'Mede cada palavra para não afastar', 'Entrega muito e recebe o mínimo', 'Aceita o que antes jurou que não aceitaria', 'Sente culpa quando tenta impor um limite', 'Parece forte por fora e confusa por dentro'];
 const steps = [
@@ -185,7 +191,27 @@ function App() {
             <p className="format-note"><Clock3 size={17}/> Conteúdo 100% digital, para acessar no seu ritmo.</p>
           </div>
         </div>
-        <div className="container preview-block"><p className="kicker">Por dentro do protocolo</p><h2>Você vai aprender a perceber o momento anterior à reação.</h2><div className="preview-grid">{[['Reconhecer','“O que meu corpo está tentando resolver agora?”'],['Interromper','“Se eu não precisasse de uma resposta imediata, o que escolheria?”'],['Reposicionar','“Esta atitude confirma ou contradiz o valor que digo ter?”']].map(([t,q])=><article key={t}><small>{t}</small><p>{q}</p></article>)}</div><p className="preview-note">Exemplos do tipo de reflexão prática trabalhada ao longo do percurso.</p></div>
+        <div className="container preview-block">
+          <p className="kicker">Por dentro do protocolo</p>
+          <h2>Você vai aprender a perceber o momento anterior à reação.</h2>
+          <div className="preview-grid">{[['Reconhecer','“O que meu corpo está tentando resolver agora?”'],['Interromper','“Se eu não precisasse de uma resposta imediata, o que escolheria?”'],['Reposicionar','“Esta atitude confirma ou contradiz o valor que digo ter?”']].map(([t,q])=><article key={t}><small>{t}</small><p>{q}</p></article>)}</div>
+          <p className="preview-note">Exemplos do tipo de reflexão prática trabalhada ao longo do percurso.</p>
+          <div className="real-preview-intro">
+            <p className="kicker">Páginas reais do Magnetus III</p>
+            <h3>Veja o material que vai acompanhar você durante os 15 dias.</h3>
+            <p>Estas imagens não são mockups ilustrativos: são amostras reais do conteúdo interno. Toque em uma página para ampliar.</p>
+          </div>
+          <div className="real-preview-grid">
+            {realPreviews.map(([src, label, title, description, width, height], index) => <figure className={`real-preview-card ${index === 2 ? 'science' : ''}`} key={src}>
+              <a href={src} target="_blank" rel="noreferrer" aria-label={`Ampliar amostra: ${title}`} onClick={() => track('product_preview_open', { preview: label })}>
+                <img src={src} alt={`Página real do Magnetus III: ${title}`} width={width} height={height} loading="lazy" decoding="async" />
+                <span>Toque para ampliar</span>
+              </a>
+              <figcaption><small>{label}</small><strong>{title}</strong><p>{description}</p></figcaption>
+            </figure>)}
+          </div>
+          <p className="preview-disclaimer">Amostras selecionadas do produto. O protocolo completo inclui os demais dias, práticas e materiais complementares apresentados nesta página.</p>
+        </div>
       </section>
 
       <section className="outcomes section soft"><div className="container narrow"><p className="kicker">O que começa a mudar</p><h2>Menos reação. Mais clareza para escolher.</h2><div className="outcome-grid">{['Você percebe o gatilho antes de mandar aquela mensagem.','Diz o que precisa sem se justificar excessivamente.','Distingue conexão real de migalhas de atenção.','Para de negociar limites para manter alguém por perto.','Constrói uma presença mais calma, firme e coerente.','Volta a tomar decisões a partir do próprio valor.'].map(x=><p key={x}><Check />{x}</p>)}</div><p className="disclaimer">Os resultados dependem da aplicação individual. O material é educativo e não substitui acompanhamento psicológico ou médico.</p></div></section>
@@ -210,9 +236,17 @@ function App() {
 
       <section className="faq section"><div className="container narrow"><p className="kicker">Dúvidas e objeções reais</p><h2>Antes de tomar sua decisão</h2><div className="faq-list">{faqs.map(([q,a],i)=><article key={q} className={openFaq===i?'open':''}><button aria-expanded={openFaq===i} onClick={()=>setOpenFaq(openFaq===i?-1:i)}><span>{q}</span><ChevronDown /></button><div><p>{a}</p></div></article>)}</div></div></section>
 
+      <section id="suporte" className="support section soft">
+        <div className="container support-card">
+          <div className="support-icon"><MessageCircle aria-hidden="true" /></div>
+          <div><p className="kicker">Atendimento oficial</p><h2>Ficou com uma dúvida antes ou depois da compra?</h2><p>Fale diretamente com o suporte do Magnetus III sobre pagamento, acesso ao material, garantia ou qualquer dúvida para tomar sua decisão com segurança.</p></div>
+          <div className="support-action"><a className="cta support-cta" href={SUPPORT_URL} target="_blank" rel="noreferrer" onClick={() => track('whatsapp_click', { location: 'support' })}><MessageCircle size={19} />Falar no WhatsApp</a><strong>(62) 99187-9936</strong><small>Canal oficial. Nunca informe senhas ou códigos de segurança.</small></div>
+        </div>
+      </section>
+
       <section className="final section"><div className="container narrow"><p className="kicker gold">Sua próxima escolha pode ser diferente</p><h2>Você não precisa deixar de sentir.<br />Precisa parar de se abandonar.</h2><p>Comece pelo relacionamento que estará presente em todos os outros: o relacionamento com você.</p><CheckoutButton location="final">Quero recuperar meu centro</CheckoutButton><p className="secure"><ShieldCheck size={16}/> Acesso imediato e 7 dias de garantia</p></div></section>
     </main>
-    <footer><div className="container"><strong>MAGNETUS III</strong><p>Conteúdo educativo para desenvolvimento pessoal.</p><nav><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos de uso</a></nav><small>© {new Date().getFullYear()} Magnetus III. Todos os direitos reservados.</small></div></footer>
+    <footer><div className="container"><strong>MAGNETUS III</strong><p>Conteúdo educativo para desenvolvimento pessoal.</p><nav><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos de uso</a><a href={SUPPORT_URL} target="_blank" rel="noreferrer" onClick={() => track('whatsapp_click', { location: 'footer' })}>Suporte no WhatsApp</a></nav><small>© {new Date().getFullYear()} Magnetus III. Todos os direitos reservados.</small></div></footer>
     <div className="mobile-bar"><div><small>Protocolo completo</small><strong>R$ 69,90</strong></div><CheckoutButton location="sticky_mobile">Quero acessar</CheckoutButton></div>
     <Consent/><Analytics/>
   </>;
