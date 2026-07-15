@@ -1,676 +1,162 @@
 import React from 'react';
-import { ArrowRight, BadgeCheck, Clock3, FileText, LockKeyhole, ShieldCheck, Sparkles, XCircle, CheckCircle } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
+import { track } from '@vercel/analytics';
+import { ArrowRight, BookOpen, Check, ChevronDown, Clock3, Heart, LockKeyhole, ShieldCheck, Sparkles } from 'lucide-react';
 import './App.css';
-import MobileScrollHero from './MobileScrollHero.jsx';
 
-const checkoutUrl = 'https://pay.kiwify.com.br/m8cGccz';
+const CHECKOUT = 'https://pay.kiwify.com.br/m8cGccz';
+const PIXEL_ID = '630829586054528';
 
-const fitPoints = [
-  'Você fica ansiosa quando gosta de alguém.',
-  'Você quer parar de correr atrás e começar a se respeitar.',
-  'Você quer ser lembrada sem precisar implorar atenção.',
-  'Você precisa de um passo a passo simples para mudar seu comportamento.'
+const steps = [
+  ['Dia 0', 'Voltar ao centro', 'Reconheça seus gatilhos e acalme o corpo antes de responder por impulso.'],
+  ['Dias 1–7', 'Romper o padrão', 'Trabalhe ansiedade, carência e o medo de perder para parar de correr atrás.'],
+  ['Dia 8', 'Virada emocional', 'Faça a prática de liberação para encerrar ciclos e soltar o que ainda pesa.'],
+  ['Dias 9–15', 'Sustentar sua presença', 'Treine limites, comunicação e escolhas coerentes com o seu valor.'],
 ];
 
-const methodSteps = [
-  {
-    label: 'Dia 0',
-    title: 'Primeiro passo',
-    text: 'Você entende como está hoje e aprende uma respiração simples para acalmar o corpo antes de agir.'
-  },
-  {
-    label: 'Dias 1 a 7',
-    title: 'Organizar por dentro',
-    text: 'Você trabalha ansiedade, carência, medo de perder e o hábito de correr atrás.'
-  },
-  {
-    label: 'Dia 8',
-    title: 'Virada emocional',
-    text: 'Você faz uma prática para soltar pesos, encerrar ciclos e parar de carregar o que te prende.'
-  },
-  {
-    label: 'Dias 9 a 15',
-    title: 'Agir diferente',
-    text: 'Você aprende postura, comunicação, silêncio e limites para ser vista com mais valor.'
-  }
+const faqs = [
+  ['Como recebo o material?', 'Após a confirmação do pagamento, o acesso digital é enviado para o e-mail informado na compra.'],
+  ['Preciso estar em um relacionamento?', 'Não. O protocolo serve para quem está conhecendo alguém, vive uma relação ou quer se preparar para não repetir os mesmos padrões.'],
+  ['Quanto tempo preciso por dia?', 'O conteúdo foi organizado para caber na rotina. Separe alguns minutos por dia para ler e realizar a prática proposta.'],
+  ['Isso ensina jogos de manipulação?', 'Não. Magnetus III trabalha autorregulação, clareza, limites e presença. O objetivo não é controlar outra pessoa.'],
+  ['E se eu comprar e não gostar?', 'Você pode solicitar o reembolso dentro de 7 dias, conforme as condições apresentadas no checkout.'],
 ];
 
-const deliverables = [
-  {
-    icon: FileText,
-    title: 'Magnetus III',
-    text: 'O guia principal com o passo a passo dos 15 dias.'
-  },
-  {
-    icon: Clock3,
-    title: 'Guia do começo',
-    text: 'A preparação para você iniciar com calma e clareza.'
-  },
-  {
-    icon: BadgeCheck,
-    title: 'Prática de liberação',
-    text: 'Um exercício para soltar pesos emocionais e virar a chave.'
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Bônus: o que evitar',
-    text: 'Um guia para perceber atitudes que passam insegurança e diminuem seu valor.'
-  }
-];
+function initMetaPixel() {
+  if (window.fbq) return;
+  const fbq = function (...args) { fbq.callMethod ? fbq.callMethod(...args) : fbq.queue.push(args); };
+  fbq.push = fbq; fbq.loaded = true; fbq.version = '2.0'; fbq.queue = [];
+  window.fbq = fbq;
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+  document.head.appendChild(script);
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+}
 
-const diagnosticQuestions = [
-  {
-    question: 'Quando você gosta de alguém, o que mais acontece com você?',
-    answers: [
-      'Fico esperando mensagem e sinais de atenção.',
-      'Mudo meu jeito para agradar mais.',
-      'Tenho medo de falar o que sinto.'
-    ]
-  },
-  {
-    question: 'Em qual situação você mais se sente invisível?',
-    answers: [
-      'Quando a pessoa some ou responde frio.',
-      'Quando eu faço muito e recebo pouco.',
-      'Quando preciso pedir o mínimo.'
-    ]
-  },
-  {
-    question: 'O que você mais quer mudar agora?',
-    answers: [
-      'Quero parar de correr atrás.',
-      'Quero impor limites sem culpa.',
-      'Quero me sentir mais segura e desejada.'
-    ]
-  }
-];
+function checkoutUrl() {
+  const url = new URL(CHECKOUT);
+  const current = new URLSearchParams(window.location.search);
+  const saved = JSON.parse(localStorage.getItem('magnetus_attribution') || '{}');
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'].forEach((key) => {
+    const value = current.get(key) || saved[key];
+    if (value) url.searchParams.set(key, value);
+  });
+  return url.toString();
+}
+
+function CheckoutButton({ location, children = 'Quero começar agora', className = '' }) {
+  const handleClick = () => {
+    window.fbq?.('track', 'InitiateCheckout', { content_name: 'Magnetus III', content_type: 'product', value: 69.9, currency: 'BRL' });
+    track('checkout_click', { location });
+  };
+  return <a className={`cta ${className}`} href={checkoutUrl()} onClick={handleClick}>{children}<ArrowRight size={19} /></a>;
+}
+
+function Consent() {
+  const [visible, setVisible] = React.useState(() => !localStorage.getItem('magnetus_consent'));
+  const choose = (value) => {
+    localStorage.setItem('magnetus_consent', value);
+    if (value === 'accepted') initMetaPixel();
+    setVisible(false);
+  };
+  React.useEffect(() => {
+    if (localStorage.getItem('magnetus_consent') === 'accepted') initMetaPixel();
+  }, []);
+  if (!visible) return null;
+  return <aside className="consent" aria-label="Preferências de privacidade"><p><strong>Sua privacidade importa.</strong> Usamos dados de navegação para medir campanhas e melhorar esta página.</p><div><button onClick={() => choose('essential')}>Somente essenciais</button><button className="consent-accept" onClick={() => choose('accepted')}>Aceitar</button></div></aside>;
+}
 
 function App() {
-  const [diagnosticAnswers, setDiagnosticAnswers] = React.useState({});
-  const [diagnosticStep, setDiagnosticStep] = React.useState(0);
+  const [openFaq, setOpenFaq] = React.useState(0);
 
-  const answeredCount = Object.keys(diagnosticAnswers).length;
-  const diagnosticComplete = answeredCount === diagnosticQuestions.length;
-  const currentDiagnostic = diagnosticQuestions[diagnosticStep];
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const data = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'].forEach((key) => {
+      if (params.get(key)) data[key] = params.get(key);
+    });
+    if (Object.keys(data).length) localStorage.setItem('magnetus_attribution', JSON.stringify(data));
+  }, []);
 
-  const answerDiagnosticQuestion = (questionIndex, answer) => {
-    setDiagnosticAnswers((current) => ({ ...current, [questionIndex]: answer }));
-
-    if (questionIndex < diagnosticQuestions.length - 1) {
-      setDiagnosticStep(questionIndex + 1);
-    }
-  };
-
-  return (
-    <div className="app">
-      <div className="mobile-only">
-        <MobileScrollHero />
-      </div>
-
-      <header className="hero-section desktop-hero-section">
-        <div className="hero-shell">
-          <div className="hero-copy-overlay">
-            <div className="hero-badge">
-              <Sparkles size={18} />
-              Guia prático para ser mais lembrada
-            </div>
-            <h1>Pare de se apagar por amor.</h1>
-            <p>
-              Um guia de 15 dias para acalmar a ansiedade, parar de correr atrás e se posicionar com mais segurança.
-            </p>
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="hero-image-cta">
-              Quero começar agora
-              <ArrowRight size={18} />
-            </a>
-            <p className="secure-note">
-              <LockKeyhole size={16} />
-              Compra segura, acesso imediato e discreto
-            </p>
-          </div>
+  return <>
+    <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <main id="conteudo">
+      <section className="hero">
+        <div className="hero-shade" />
+        <div className="container hero-content">
+          <p className="eyebrow"><Sparkles size={16} /> Protocolo prático de 15 dias</p>
+          <h1>Pare de se apagar<br />para ser escolhida.</h1>
+          <p className="hero-lead">Recupere seu centro, reduza a ansiedade e aprenda a se posicionar sem jogos, cobranças ou medo de perder.</p>
+          <CheckoutButton location="hero">Quero recuperar meu centro</CheckoutButton>
+          <p className="secure"><LockKeyhole size={15} /> Compra segura · acesso digital imediato · 7 dias de garantia</p>
         </div>
-      </header>
+      </section>
 
-      <section id="questionario" className="mobile-lead-section mobile-only" aria-labelledby="questionario-title">
-        <div className="mobile-lead-shell">
-          <p className="mobile-lead-kicker">Diagnóstico rápido</p>
-          <h2 id="questionario-title">Descubra onde você está se apagando.</h2>
-          <p className="mobile-lead-intro">
-            Responda uma pergunta por vez. No final, você vê o próximo passo mais claro.
-          </p>
-
-          <div className="mobile-lead-questions">
-            <div className="mobile-lead-progress" aria-label={`Pergunta ${diagnosticStep + 1} de ${diagnosticQuestions.length}`}>
-              <span>Pergunta {diagnosticStep + 1} de {diagnosticQuestions.length}</span>
-              <div>
-                {diagnosticQuestions.map((item, index) => (
-                  <i key={item.question} className={index <= diagnosticStep ? 'active' : ''} />
-                ))}
-              </div>
-            </div>
-
-            <fieldset className="mobile-lead-question" key={currentDiagnostic.question}>
-              <legend>{currentDiagnostic.question}</legend>
-              {currentDiagnostic.answers.map((answer) => {
-                const selected = diagnosticAnswers[diagnosticStep] === answer;
-
-                return (
-                  <button
-                    type="button"
-                    key={answer}
-                    className={selected ? 'selected' : ''}
-                    onClick={() => answerDiagnosticQuestion(diagnosticStep, answer)}
-                  >
-                    {answer}
-                  </button>
-                );
-              })}
-            </fieldset>
-
-            {diagnosticStep > 0 && (
-              <button
-                type="button"
-                className="mobile-lead-back"
-                onClick={() => setDiagnosticStep((step) => Math.max(0, step - 1))}
-              >
-                Voltar
-              </button>
-            )}
+      <section className="recognition section">
+        <div className="container narrow">
+          <p className="kicker">Talvez você conheça essa sensação</p>
+          <h2>Você é forte para tudo — até começar a gostar de alguém.</h2>
+          <div className="symptoms">
+            {['Espera uma mensagem e perde a paz', 'Mede cada palavra para não afastar', 'Entrega muito e recebe o mínimo', 'Aceita o que antes jurou que não aceitaria'].map((text) => <div key={text}><Heart size={19} /><span>{text}</span></div>)}
           </div>
+          <p className="bridge">Isso não significa que você é fraca. Significa que seu corpo aprendeu a buscar segurança na resposta do outro. E padrões aprendidos podem ser interrompidos.</p>
+        </div>
+      </section>
 
-          <div className={diagnosticComplete ? 'mobile-lead-result is-visible' : 'mobile-lead-result'}>
-            <p>
-              Você não precisa continuar tentando ser escolhida. O próximo passo é seguir um roteiro simples para agir com mais calma, limite e presença.
-            </p>
-            <a href="#oferta">
-              Ver o guia indicado
-              <ArrowRight size={18} />
-            </a>
+      <section className="method section dark">
+        <div className="container">
+          <p className="kicker gold">O caminho Magnetus III</p>
+          <h2>Um passo por dia para voltar a escolher a si mesma.</h2>
+          <p className="section-intro">Sem fórmulas para manipular ninguém. Você trabalha de dentro para fora: regula a emoção, entende o padrão e pratica uma nova postura.</p>
+          <div className="steps">{steps.map(([day, title, text], index) => <article key={day}><span>0{index + 1}</span><small>{day}</small><h3>{title}</h3><p>{text}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section className="contents section">
+        <div className="container split">
+          <div className="product-stage"><img src="/images/oferta_combo_nova.jpg" alt="Magnetus III e seus materiais complementares" width="540" height="675" loading="lazy" decoding="async" /></div>
+          <div>
+            <p className="kicker">O que você recebe</p>
+            <h2>Um sistema completo, não só mais um livro.</h2>
+            <ul className="receive-list">
+              <li><BookOpen /><span><strong>Magnetus III</strong>Protocolo guiado de presença feminina por 15 dias.</span></li>
+              <li><ShieldCheck /><span><strong>Antídoto do Antivalor</strong>Material complementar para identificar atitudes que enfraquecem seus limites.</span></li>
+              <li><Sparkles /><span><strong>Masterclass “Morte em Vida”</strong>Aula complementar apresentada junto à oferta.</span></li>
+            </ul>
+            <p className="format-note"><Clock3 size={17} /> Conteúdo 100% digital, para acessar no seu ritmo.</p>
           </div>
         </div>
       </section>
 
-      {/* 2. O DEDO NA FERIDA (Conexão Emocional) */}
-      <section className="pain-section">
-        <div className="container">
-          <div className="pain-content">
-            <h2 className="section-title">
-              Você é forte para tudo, mas <span className="text-bordeaux">se perde</span> quando gosta de alguém?
-            </h2>
-            <div className="pain-text">
-              <p>
-                Você trabalha, resolve problemas e segura muita coisa. Mas quando gosta de alguém, começa a esperar mensagem, medir palavras e aceitar menos do que merece.
-              </p>
-              <div className="final-blow">
-                <p>
-                  <strong>Não é falta de sorte.</strong> É um <span className="highlight">jeito aprendido de agir</span>. Quando você não percebe isso, repete as mesmas escolhas e se sente cada vez menos valorizada.
-                </p>
-              </div>
-            </div>
-          </div>
+      <section className="outcomes section soft">
+        <div className="container narrow">
+          <p className="kicker">O que começa a mudar</p>
+          <h2>Menos reação. Mais clareza para escolher.</h2>
+          <div className="outcome-grid">{['Você percebe o gatilho antes de mandar aquela mensagem.', 'Aprende a dizer o que precisa sem se justificar demais.', 'Distingue conexão real de migalhas de atenção.', 'Para de negociar limites só para manter alguém por perto.', 'Constrói uma presença mais calma, firme e coerente.', 'Volta a tomar decisões a partir do próprio valor.'].map((text) => <p key={text}><Check />{text}</p>)}</div>
+          <p className="disclaimer">Os resultados dependem da aplicação individual. O material é educativo e não substitui acompanhamento psicológico ou médico.</p>
         </div>
       </section>
 
-      <section className="fit-section">
-        <div className="container">
-          <div className="fit-grid">
-            <div className="fit-copy">
-              <span className="eyebrow">Antes de comprar</span>
-              <h2 className="section-title">Este guia é para quem quer parar de se diminuir para manter alguém perto.</h2>
-              <p>
-                Magnetus III não promete controlar outra pessoa. Ele ajuda você a mudar sua postura, falar com mais clareza e parar de agir por medo de perder.
-              </p>
-            </div>
-            <div className="fit-panel">
-              {fitPoints.map((point) => (
-                <div className="fit-row" key={point}>
-                  <CheckCircle size={20} />
-                  <p>{point}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+      <section id="oferta" className="offer section dark">
+        <div className="container offer-grid">
+          <div><p className="kicker gold">Comece hoje</p><h2>15 dias para parar de entregar sua paz nas mãos de outra pessoa.</h2><p>Magnetus III + Antídoto do Antivalor + masterclass complementar.</p><div className="guarantee"><ShieldCheck /><span><strong>Você tem 7 dias para decidir.</strong>Se o conteúdo não fizer sentido para você, solicite o reembolso dentro do prazo informado no checkout.</span></div></div>
+          <div className="price-card"><span>Acesso completo</span><s>R$ 174,75</s><p><small>R$</small> 69,90</p><em>à vista ou 12× de R$ 6,99</em><CheckoutButton location="offer">Quero acessar o Magnetus III</CheckoutButton><small className="payment"><LockKeyhole /> Pagamento processado com segurança pela Kiwify</small></div>
         </div>
       </section>
 
-      {/* SEÇÃO ANTES VS DEPOIS */}
-      <section className="comparison-section">
-        <div className="container">
-          <h2 className="section-title text-center text-white">Antes e depois do Magnetus</h2>
-          <div className="comparison-grid">
-            <div className="comparison-card before">
-              <div className="card-header">
-                <XCircle className="icon-error" />
-                <h3>Antes</h3>
-              </div>
-              <ul className="comparison-list">
-                <li>Ficar em alerta esperando resposta</li>
-                <li>Buscar aprovação o tempo todo</li>
-                <li>Falar com medo de desagradar</li>
-                <li>Aceitar pouco para não perder a pessoa</li>
-                <li>Sentir que não é vista de verdade</li>
-              </ul>
-            </div>
-            <div className="comparison-card after">
-              <div className="card-header">
-                <CheckCircle className="icon-success" />
-                <h3>Depois</h3>
-              </div>
-              <ul className="comparison-list">
-                <li>Mais calma antes de responder</li>
-                <li>Mais clareza para enxergar seus padrões</li>
-                <li>Comunicação mais segura</li>
-                <li>Limites sem culpa</li>
-                <li>Mais presença sem fazer esforço para agradar</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <section className="faq section">
+        <div className="container narrow"><p className="kicker">Dúvidas frequentes</p><h2>Antes de tomar sua decisão</h2><div className="faq-list">{faqs.map(([question, answer], index) => <article key={question} className={openFaq === index ? 'open' : ''}><button aria-expanded={openFaq === index} onClick={() => setOpenFaq(openFaq === index ? -1 : index)}><span>{question}</span><ChevronDown /></button><div><p>{answer}</p></div></article>)}</div></div>
       </section>
 
-      <section className="method-section">
-        <div className="container">
-          <div className="method-grid">
-            <div className="method-intro">
-              <span className="eyebrow eyebrow-light">Como você usa</span>
-              <h2 className="section-title text-white">15 dias para trocar ansiedade por atitude.</h2>
-              <p>
-                Você começa se acalmando, entende seus padrões e depois aprende como agir, falar e se posicionar sem parecer carente.
-              </p>
-              <a href="#oferta" className="method-link">
-                Ver o que está incluso
-                <ArrowRight size={18} />
-              </a>
-            </div>
-            <div className="method-steps">
-              {methodSteps.map((step) => (
-                <article className="method-step" key={step.label}>
-                  <span>{step.label}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. A SOLUÇÃO (Apresentação do Produto) */}
-      <section className="solution-section">
-        <div className="container">
-          <div className="section-header text-center mb-16">
-            <h2 className="section-title">O que você vai receber</h2>
-            <p className="section-subtitle">Materiais simples para você aplicar no dia a dia.</p>
-          </div>
-
-          <div className="products-detailed-grid">
-            {/* Ebook 1 */}
-            <div className="product-detail-card">
-              <div className="product-image">
-                <img src="/images/magnetus-iii.png" alt="Magnetus III" className="premium-book-img" />
-              </div>
-              <div className="product-info">
-                <span className="product-tag">Guia principal</span>
-                <h3>MAGNETUS III: Guia de Presença</h3>
-                <p>
-                  Um guia de 15 dias para acalmar a ansiedade, perceber seus padrões e agir com mais presença, limite e segurança.
-                </p>
-              </div>
-            </div>
-
-            {/* Ebook 2 */}
-            <div className="product-detail-card reverse">
-              <div className="product-image">
-                <img src="/images/antidoto.png" alt="Bônus O que evitar" className="premium-book-img" />
-              </div>
-              <div className="product-info">
-                <span className="product-tag">Bônus prático</span>
-                <h3>O QUE EVITAR: atitudes que diminuem seu valor</h3>
-                <p>
-                  Um bônus para perceber atitudes como se explicar demais, ficar disponível demais, reagir por ansiedade e aceitar pouco.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="combo-highlight-box">
-            <div className="combo-image-wrap">
-              <img src="/images/magnetus-e-antidoto.png" alt="Combo Magnetus III e bônus O que evitar" className="combo-image" />
-            </div>
-            <div className="combo-content">
-              <Sparkles className="text-gold mb-4" size={32} />
-              <h3>O combo completo</h3>
-              <p>
-                O guia principal mostra o que fazer. O bônus mostra o que evitar. Juntos, eles ajudam você a parar de se diminuir e começar a se posicionar melhor.
-              </p>
-              <p className="result-highlight">Mais presença, menos desespero para ser escolhida.</p>
-            </div>
-          </div>
-
-          <div className="deliverables-section">
-            <div className="deliverables-copy">
-              <span className="eyebrow">O que chega para você</span>
-              <h2>Você recebe quatro materiais simples para começar e aplicar.</h2>
-              <p>
-                Cada material tem uma função: começar com calma, seguir os 15 dias, virar a chave emocional e evitar atitudes que te diminuem.
-              </p>
-            </div>
-            <div className="deliverables-grid">
-              {deliverables.map(({ icon: Icon, title, text }) => (
-                <article className="deliverable-item" key={title}>
-                  <Icon size={24} />
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* QUEBRA DE OBJEÇÕES — Ancoragem de Preço */}
-      <section className="price-anchor-section" aria-labelledby="price-anchor-title">
-        <div className="container">
-          <div className="price-anchor-header">
-            <span className="eyebrow">Perspectiva real</span>
-            <h2 id="price-anchor-title">Você já gasta mais do que isso com coisas que passam rápido.</h2>
-            <p>
-              Aqui, o investimento é em uma mudança que você leva para seus relacionamentos e para sua postura.
-            </p>
-          </div>
-
-          <div className="price-anchor-grid">
-            {/* Coluna: Gastos comuns */}
-            <div className="price-anchor-col">
-              <span className="price-anchor-col-title expenses">
-                <XCircle size={16} />
-                Você já gasta com isso
-              </span>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon expense">💅</div>
-                <div className="anchor-item-label">
-                  Manicure + pedicure
-                  <small>Dura uma semana</small>
-                </div>
-                <span className="anchor-item-price red">R$ 85</span>
-              </div>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon expense">🍷</div>
-                <div className="anchor-item-label">
-                  Um jantar fora
-                  <small>Dura uma noite</small>
-                </div>
-                <span className="anchor-item-price red">R$ 120</span>
-              </div>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon expense">💄</div>
-                <div className="anchor-item-label">
-                  Um perfume importado
-                  <small>Dura alguns meses</small>
-                </div>
-                <span className="anchor-item-price red">R$ 250</span>
-              </div>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon expense">🛋️</div>
-                <div className="anchor-item-label">
-                  Uma sessão de terapia
-                  <small>Dura 50 minutos</small>
-                </div>
-                <span className="anchor-item-price red">R$ 200</span>
-              </div>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon expense">📱</div>
-                <div className="anchor-item-label">
-                  Assinaturas mensais
-                  <small>Streaming + apps que você nem usa</small>
-                </div>
-                <span className="anchor-item-price red">R$ 90</span>
-              </div>
-            </div>
-
-            {/* Divisor VS */}
-            <div className="price-anchor-divider">
-              <div className="price-anchor-divider-line" />
-            </div>
-
-            {/* Coluna: O que você recebe */}
-            <div className="price-anchor-col">
-              <span className="price-anchor-col-title value">
-                <Sparkles size={16} />
-                O que o Magnetus entrega
-              </span>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon worth">🧠</div>
-                <div className="anchor-item-label">
-                  Mais calma
-                  <small>Responder sem agir no impulso</small>
-                </div>
-                <span className="anchor-item-price gold">✓</span>
-              </div>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon worth">🪞</div>
-                <div className="anchor-item-label">
-                  Clareza
-                  <small>Perceber o que te faz correr atrás</small>
-                </div>
-                <span className="anchor-item-price gold">✓</span>
-              </div>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon worth">👑</div>
-                <div className="anchor-item-label">
-                  Mais presença
-                  <small>Ser vista com mais valor</small>
-                </div>
-                <span className="anchor-item-price gold">✓</span>
-              </div>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon worth">🛡️</div>
-                <div className="anchor-item-label">
-                  Limites
-                  <small>Se posicionar sem culpa</small>
-                </div>
-                <span className="anchor-item-price gold">✓</span>
-              </div>
-
-              <div className="anchor-item">
-                <div className="anchor-item-icon worth">📖</div>
-                <div className="anchor-item-label">
-                  Guia de 15 dias
-                  <small>Um passo por dia</small>
-                </div>
-                <span className="anchor-item-price gold">✓</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Veredito */}
-          <div className="price-anchor-verdict">
-            <div className="price-anchor-verdict-card">
-              <div className="price-anchor-verdict-price">
-                <span className="old">R$ 174,75</span>
-                <span className="current">R$ 69,90</span>
-                <span className="installments">ou 12x de R$ 6,99</span>
-              </div>
-              <p>
-                Menos que uma manicure. Mais útil do que continuar tentando sozinha sem saber o que mudar.
-              </p>
-              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="price-anchor-verdict-cta">
-                QUERO COMEÇAR POR R$ 69,90
-                <ArrowRight size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. QUEBRA DE OBJEÇÕES E ANCORAGEM (A Oferta) */}
-      <section id="oferta" className="offer-section">
-        <div className="container">
-          <div className="offer-wrapper">
-            <div className="offer-kicker">
-              <BadgeCheck size={20} />
-              Oferta especial do combo
-            </div>
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="offer-image-link" aria-label="Comprar combo Magnetus III">
-              <img 
-                src="/images/valor-oferta.png" 
-                alt="Magnetus III - Oferta Especial" 
-                className="offer-image"
-              />
-            </a>
-            <div className="offer-includes" aria-label="Itens inclusos na oferta">
-              <strong>Esta oferta inclui:</strong>
-              <ul>
-                <li>Magnetus III</li>
-                <li>Guia do começo</li>
-                <li>Prática de liberação emocional</li>
-                <li>Bônus O que evitar</li>
-                <li>Garantia de 7 dias</li>
-                <li>Acesso imediato</li>
-                <li>Compra segura</li>
-              </ul>
-            </div>
-            <div className="purchase-clarity">
-              <div>
-                <ShieldCheck size={22} />
-                <strong>Garantia de 7 dias</strong>
-                <span>Você tem tempo para ver se o material faz sentido para você.</span>
-              </div>
-              <div>
-                <LockKeyhole size={22} />
-                <strong>Checkout seguro</strong>
-                <span>Pagamento seguro e acesso digital após a confirmação.</span>
-              </div>
-              <div>
-                <Clock3 size={22} />
-                <strong>Começo imediato</strong>
-                <span>Você pode comprar, acessar e começar hoje.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. SOBRE A AUTORA */}
-      <section className="author-section">
-        <div className="container">
-          <div className="author-grid">
-            <div className="author-image-wrapper">
-              <img src="/images/autora_sol_lima.jpg" alt="Autora Sol Lima" className="author-img" />
-            </div>
-            <div className="author-content">
-              <h2 className="author-name">Sol Lima</h2>
-              <h3 className="author-subtitle text-gold">Autora do Magnetus III</h3>
-              
-              <div className="author-bio">
-                <p className="author-highlight"><strong>Eu não criei este guia para ensinar joguinho. Eu criei para ajudar mulheres a voltarem para si.</strong></p>
-                
-                <p>Antes de criar o Magnetus, eu também vivi ansiedade, medo de perder, vontade de agradar e a sensação de esperar ser escolhida.</p>
-                
-                <p>O Magnetus nasceu dessa experiência: quando uma mulher perde a si mesma, ela também perde força, brilho e segurança.</p>
-                
-                <p>A mudança começa quando você para de agir por desespero e aprende a responder com mais calma, limite e clareza.</p>
-                
-                <p>Por isso, este guia não promete controlar ninguém. Ele entrega um caminho para você se observar, mudar atitudes e voltar a se posicionar melhor.</p>
-                
-                <div className="author-quote">
-                  <p>"Você não precisa parecer perfeita. Precisa parar de se abandonar para ser escolhida."</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. NOTA PESSOAL */}
-      <section className="personal-note-section">
-        <div className="container">
-          <article className="personal-note-card">
-            <span className="personal-note-mark" aria-hidden="true">“</span>
-            <div className="personal-note-content">
-              <p className="eyebrow">Uma nota pessoal da Sol</p>
-              <blockquote>
-                <p>Eu sei como é tentar ser forte por fora e, por dentro, se sentir cansada de esperar atenção.</p>
-                <p>Eu sei como é gostar de alguém e começar a medir cada palavra, cada silêncio e cada resposta.</p>
-                <p>O Magnetus III nasceu para transformar essa dor em atitude prática.</p>
-                <p>Eu não acredito em joguinho. Eu acredito em calma, limite, clareza e prática.</p>
-                <p>Se você chegou até aqui, talvez esteja cansada de se diminuir para caber no desejo de alguém.</p>
-              </blockquote>
-              <p className="personal-note-signature">— Sol Lima</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section className="final-emotional-cta" aria-labelledby="final-emotional-title">
-        <div className="container">
-          <div className="final-emotional-shell">
-            <p className="final-emotional-kicker">Último passo</p>
-            <h2 id="final-emotional-title">
-              Você não precisa continuar se perdendo quando gosta de alguém.
-            </h2>
-            <p className="final-emotional-subtitle">
-              Existe um jeito mais calmo, claro e seguro de se posicionar.
-            </p>
-
-            <div className="final-emotional-copy">
-              <p>
-                Talvez você tenha passado tempo demais tentando ser escolhida, tentando provar valor e tentando parecer tranquila enquanto por dentro estava ansiosa.
-              </p>
-              <p>
-                Mas você não precisa continuar vivendo desse jeito.
-              </p>
-              <p>
-                O Magnetus III foi criado para ajudar você a voltar para si: com prática, respiração, calma, limite e atitudes mais claras.
-              </p>
-              <p>
-                Você não precisa virar outra mulher. Você precisa parar de abandonar a mulher que já existe em você.
-              </p>
-            </div>
-
-            <p className="final-emotional-highlight">
-              Magnetismo não começa quando alguém te escolhe. Começa quando você volta para si.
-            </p>
-
-            <p className="final-emotional-before-button">
-              Se você quer começar hoje, o próximo passo está abaixo.
-            </p>
-
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="final-emotional-button">
-              QUERO COMEÇAR AGORA
-              <ArrowRight size={20} />
-            </a>
-            <p className="final-emotional-note">
-              Acesso imediato • 100% digital • Garantia de 7 dias
-            </p>
-            <p className="final-emotional-signature">
-              Magnetus III — guia de 15 dias para presença feminina.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="sticky-cta">
-        Quero começar agora
-        <ArrowRight size={18} />
-      </a>
-
-      <footer className="footer">
-        <div className="container">
-          <div className="logo-placeholder footer-logo">M-III</div>
-          <p>&copy; {new Date().getFullYear()} Magnetus III. Todos os direitos reservados.</p>
-        </div>
-      </footer>
-    </div>
-  );
+      <section className="final section"><div className="container narrow"><p className="kicker gold">Sua próxima escolha pode ser diferente</p><h2>Você não precisa deixar de sentir.<br />Precisa parar de se abandonar.</h2><CheckoutButton location="final">Quero começar meus 15 dias</CheckoutButton><p className="secure"><ShieldCheck size={16} /> Acesso imediato e 7 dias de garantia</p></div></section>
+    </main>
+    <footer><div className="container"><strong>MAGNETUS III</strong><p>Conteúdo educativo para desenvolvimento pessoal.</p><nav><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos de uso</a></nav><small>© {new Date().getFullYear()} Magnetus III. Todos os direitos reservados.</small></div></footer>
+    <div className="mobile-bar"><div><small>Acesso completo</small><strong>R$ 69,90</strong></div><CheckoutButton location="sticky_mobile">Quero acessar</CheckoutButton></div>
+    <Consent />
+    <Analytics />
+  </>;
 }
 
 export default App;
