@@ -36,6 +36,8 @@ const faqs = [
   ['Serve para solteiras?', 'Sim. Você pode usar o percurso para compreender relações anteriores, fortalecer critérios e não repetir o mesmo padrão quando conhecer alguém.'],
   ['Quanto tempo preciso por dia?', 'O conteúdo foi organizado para caber na rotina. Separe alguns minutos por dia para ler e realizar a prática proposta.'],
   ['Não encontro tudo isso gratuitamente na internet?', 'Informação isolada existe em muitos lugares. A diferença aqui é a sequência: reconhecer o padrão, regular a emoção e praticar uma nova postura em uma ordem aplicável.'],
+  ['R$ 69,90 não é caro para um material digital?', 'O valor não está no formato do arquivo, mas na sequência de 15 dias, nos materiais complementares e na possibilidade de reutilizar as práticas quando novos gatilhos aparecerem. Ainda assim, somente você pode decidir se este investimento cabe no seu momento.'],
+  ['E se o problema for a falta de reciprocidade dele, não o meu comportamento?', 'Magnetus não transforma ausência ou desrespeito em responsabilidade sua. Em alguns casos, recuperar clareza significa justamente reconhecer que você está tentando extrair presença de quem oferece ausência — e escolher a partir disso.'],
   ['Isso substitui terapia?', 'Não. É um material educativo de desenvolvimento pessoal. Não substitui psicoterapia, diagnóstico, tratamento médico ou atendimento de emergência.'],
   ['Como recebo o material?', 'Após a confirmação do pagamento, o acesso digital é enviado para o e-mail informado na compra.'],
   ['E se eu comprar e não gostar?', 'Você pode solicitar o reembolso dentro de 7 dias, conforme as condições apresentadas no checkout.'],
@@ -87,12 +89,18 @@ function App() {
     <main id="conteudo">
       <section className="hero">
         <div className="hero-shade" />
-        <div className="container hero-content">
-          <p className="eyebrow"><Sparkles size={16} /> Para mulheres fortes que se perdem quando gostam</p>
-          <h1>Você não ficou fraca.<br />Você perdeu seu centro.</h1>
-          <p className="hero-lead">Entenda por que você começa a esperar mensagens, aceitar menos e agir pelo medo de perder — e siga um protocolo de 15 dias para recuperar sua presença.</p>
-          <div className="hero-actions"><a className="cta" href="#entenda">Quero entender o que acontece comigo<ArrowDown size={19} /></a><a className="text-link" href="#oferta">Já conheço e quero acessar</a></div>
-          <p className="secure"><LockKeyhole size={15} /> Conteúdo digital · aplicação no seu ritmo · 7 dias de garantia</p>
+        <div className="container hero-layout">
+          <div className="hero-content">
+            <p className="eyebrow"><Sparkles size={16} /> Para mulheres fortes que se perdem quando gostam</p>
+            <h1>Você não ficou fraca.<br />Você perdeu seu centro.</h1>
+            <p className="hero-lead">Entenda por que você começa a esperar mensagens, aceitar menos e agir pelo medo de perder — e siga um protocolo de 15 dias para recuperar sua presença.</p>
+            <div className="hero-actions"><a className="cta" href="#entenda">Quero entender o que acontece comigo<ArrowDown size={19} /></a><a className="text-link" href="#oferta">Já conheço e quero acessar</a></div>
+            <p className="secure"><LockKeyhole size={15} /> Conteúdo digital · aplicação no seu ritmo · 7 dias de garantia</p>
+          </div>
+          <div className="hero-founder">
+            <div className="hero-founder-frame"><img src="/images/sol-lima.webp" alt="Sol Lima, criadora do Magnetus III" width="422" height="512" /></div>
+            <p><strong>Sol Lima</strong><span>Criadora do Magnetus III e da metodologia Relacione-se®</span></p>
+          </div>
         </div>
       </section>
 
@@ -130,7 +138,26 @@ function App() {
       <section className="false-solutions section">
         <div className="container split-copy">
           <div><p className="kicker">Por que você ainda volta ao mesmo lugar?</p><h2>Talvez você tenha tentado mudar apenas o comportamento.</h2><p>Sumir, bloquear, repetir frases de autoestima, assistir a vídeos soltos ou prometer que “desta vez não vai atrás” pode funcionar por algumas horas. Mas, quando o gatilho volta, o padrão assume novamente.</p></div>
-          <div className="quote-card"><MessageCircle /><p>Você não precisa de mais uma regra para parecer forte.</p><strong>Precisa de uma sequência para continuar sendo você mesmo quando o medo aparece.</strong></div>
+          <div className="quote-card"><MessageCircle /><p>Você não precisa de mais uma regra para parecer forte.</p><strong>Precisa de uma sequência para continuar sendo você mesma quando o medo aparece.</strong></div>
+        </div>
+      </section>
+
+      <section className="origin-story section">
+        <div className="container origin-grid">
+          <div>
+            <p className="kicker">A prova de origem do método</p>
+            <h2>O Magnetus não nasceu de uma teoria sobre a dor de outra mulher.</h2>
+            <p className="origin-lead">Nasceu quando eu precisei descobrir como voltar à vida dentro de mim.</p>
+          </div>
+          <div className="origin-copy">
+            <p>Eu vivi o apagamento emocional. Continuei funcionando por fora enquanto, por dentro, deixava de reconhecer a mulher que eu era. Chamei essa experiência de <strong>feminicídio emocional</strong>: não como diagnóstico clínico, mas como o nome da sensação de continuar existindo enquanto partes essenciais de mim pareciam ter sido silenciadas.</p>
+            <p>Para sair do que eu chamava de <strong>morte em vida</strong>, fiz formação na área de relacionamentos. Mas o curso, sozinho, não realizou a travessia por mim. Aos poucos, fui compreendendo, aplicando, observando meus gatilhos e registrando o que realmente me ajudava a recuperar presença, limite e autoria.</p>
+            <p>O que funcionava deixou de ser uma coleção de descobertas soltas. Eu organizei a sequência, transformei a experiência em prática e protocolei o caminho. Foi assim que nasceu o Magnetus III.</p>
+            <blockquote>“Eu não criei este protocolo olhando a mulher apagada de fora. Eu o criei enquanto aprendia a dar vida novamente à mulher em mim.”</blockquote>
+          </div>
+        </div>
+        <div className="container origin-steps">
+          {[['01','Vivi','Reconheci o apagamento sem romantizar a dor.'],['02','Busquei','Estudei relacionamentos para compreender o que eu ainda não sabia nomear.'],['03','Apliquei','Testei na própria vida, observei e ajustei o que produzia mudança real em mim.'],['04','Protocolei','Organizei uma sequência para que outra mulher não precise começar do zero.']].map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}
         </div>
       </section>
 
@@ -161,15 +188,25 @@ function App() {
         <div className="container preview-block"><p className="kicker">Por dentro do protocolo</p><h2>Você vai aprender a perceber o momento anterior à reação.</h2><div className="preview-grid">{[['Reconhecer','“O que meu corpo está tentando resolver agora?”'],['Interromper','“Se eu não precisasse de uma resposta imediata, o que escolheria?”'],['Reposicionar','“Esta atitude confirma ou contradiz o valor que digo ter?”']].map(([t,q])=><article key={t}><small>{t}</small><p>{q}</p></article>)}</div><p className="preview-note">Exemplos do tipo de reflexão prática trabalhada ao longo do percurso.</p></div>
       </section>
 
-      <section className="author section">
-        <div className="container author-grid"><div className="author-photo"><img src="/images/sol-lima.webp" alt="Sol Lima, criadora do Magnetus III" width="422" height="512" loading="lazy" /></div><div><p className="kicker">Quem criou o Magnetus III</p><h2>Sol Lima</h2><p className="author-role">Coach de relacionamentos e criadora da metodologia Relacione-se®.</p><p>Sol Lima criou o Magnetus a partir de uma pergunta central: por que mulheres inteligentes, capazes e conscientes do próprio valor podem desaparecer emocionalmente quando têm medo de perder uma relação?</p><p>Seu trabalho não ensina a vencer jogos amorosos. Ensina a reconhecer o instante em que uma mulher começa a negociar a si mesma — e a construir uma resposta mais consciente, firme e coerente.</p><blockquote>“Não quero ensinar você a ser escolhida a qualquer custo. Quero ajudar você a voltar a participar da escolha.”</blockquote></div></div>
-      </section>
-
       <section className="outcomes section soft"><div className="container narrow"><p className="kicker">O que começa a mudar</p><h2>Menos reação. Mais clareza para escolher.</h2><div className="outcome-grid">{['Você percebe o gatilho antes de mandar aquela mensagem.','Diz o que precisa sem se justificar excessivamente.','Distingue conexão real de migalhas de atenção.','Para de negociar limites para manter alguém por perto.','Constrói uma presença mais calma, firme e coerente.','Volta a tomar decisões a partir do próprio valor.'].map(x=><p key={x}><Check />{x}</p>)}</div><p className="disclaimer">Os resultados dependem da aplicação individual. O material é educativo e não substitui acompanhamento psicológico ou médico.</p></div></section>
 
       <section className="objections section"><div className="container"><p className="kicker">Talvez uma parte sua ainda esteja dizendo...</p><h2>“Eu já sei o que deveria fazer. Só não consigo fazer quando acontece.”</h2><div className="objection-grid">{[['“Não tenho disciplina.”','Você não precisa mudar tudo de uma vez. O percurso divide a prática em etapas diárias.'],['“Tenho medo de virar uma mulher fria.”','O objetivo não é sentir menos. É parar de transformar sentimento em abandono de si.'],['“Ele já se afastou.”','Magnetus não promete mudar a decisão dele. Ele trabalha a pessoa que continuará com você em qualquer cenário: você.'],['“Meu caso é diferente.”','As histórias mudam. O ciclo de alerta, busca de segurança e reação impulsiva costuma seguir uma estrutura reconhecível.']].map(([q,a])=><article key={q}><h3>{q}</h3><p>{a}</p></article>)}</div></div></section>
 
+      <section className="value-reframe section soft">
+        <div className="container value-grid">
+          <div><p className="kicker">Antes de pensar no preço</p><h2>Você não precisa escolher entre cuidar da aparência e cuidar da mulher que existe por dentro.</h2></div>
+          <div><p>Uma escova, uma maquiagem ou um perfume podem custar mais de R$ 69,90 — e não há nada errado em investir naquilo que faz você se sentir bonita.</p><p>Mas esses produtos cuidam da forma como você se apresenta. O Magnetus III trabalha a forma como você se mantém inteira quando o celular silencia, quando alguém se afasta ou quando o medo de perder tenta negociar seus limites.</p><p className="value-emphasis">Não é um investimento para parecer mais desejável. É um investimento para não deixar de ser você diante de quem deseja.</p></div>
+        </div>
+        <div className="container value-cards">
+          <article><Clock3/><h3>Alguns minutos por dia</h3><p>Uma direção diária, em vez de horas revendo conversas e tentando interpretar silêncios.</p></article>
+          <article><BookOpen/><h3>Uma sequência reutilizável</h3><p>Práticas para revisitar quando um novo gatilho, relação ou decisão aparecer.</p></article>
+          <article><ShieldCheck/><h3>7 dias para conhecer</h3><p>Você pode acessar o material e decidir com mais segurança dentro do prazo da garantia.</p></article>
+        </div>
+      </section>
+
       <section id="oferta" className="offer section dark"><div className="container offer-grid"><div><p className="kicker gold">Comece hoje</p><h2>15 dias para parar de entregar sua paz nas mãos de outra pessoa.</h2><p>Magnetus III + Antídoto do Antivalor + masterclass complementar.</p><div className="offer-summary">{['Protocolo completo de 15 dias','Materiais complementares','Acesso digital imediato','Garantia de 7 dias'].map(x=><span key={x}><Check />{x}</span>)}</div><div className="guarantee"><ShieldCheck /><span><strong>Você tem 7 dias para decidir.</strong>Leia, conheça a proposta e, se o conteúdo não fizer sentido para você, solicite o reembolso dentro do prazo informado no checkout.</span></div></div><div className="price-card"><span>Seu acesso completo</span><p><small>R$</small> 69,90</p><em>à vista ou 12× de R$ 6,99</em><CheckoutButton location="offer">Quero começar meus 15 dias</CheckoutButton><small className="payment"><LockKeyhole /> Pagamento processado com segurança pela Kiwify</small></div></div></section>
+
+      <section className="after-buy section"><div className="container"><p className="kicker">O que acontece depois da compra?</p><h2>Você não fica sozinha tentando descobrir por onde começar.</h2><div className="after-grid">{[['01','Conclui a compra','O pagamento é processado com segurança pela Kiwify.'],['02','Recebe o acesso','O material digital chega ao e-mail informado no checkout.'],['03','Abre o Dia 0','Você começa reconhecendo seu momento e preparando a aplicação.'],['04','Segue uma etapa por dia','Avança no seu ritmo e revisita as práticas sempre que precisar.']].map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
 
       <section className="faq section"><div className="container narrow"><p className="kicker">Dúvidas e objeções reais</p><h2>Antes de tomar sua decisão</h2><div className="faq-list">{faqs.map(([q,a],i)=><article key={q} className={openFaq===i?'open':''}><button aria-expanded={openFaq===i} onClick={()=>setOpenFaq(openFaq===i?-1:i)}><span>{q}</span><ChevronDown /></button><div><p>{a}</p></div></article>)}</div></div></section>
 
