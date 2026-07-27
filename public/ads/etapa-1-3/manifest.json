@@ -1,0 +1,49 @@
+{
+  "project": "Magnetus III Feminino",
+  "stage": "1.3",
+  "status": "ready_for_export",
+  "brand_voice": {
+    "central_mechanism": "Apagamento da Presença™",
+    "mother_phrase": "Magnetismo não é chamar atenção. É não desaparecer de si quando a atenção chega.",
+    "prohibited_claims": [
+      "prometer reconciliação",
+      "prometer controle sobre outra pessoa",
+      "usar depoimentos inventados",
+      "diagnosticar a cliente",
+      "ensinar silêncio ou distância como manipulação"
+    ]
+  },
+  "creatives": [
+    {
+      "id": "F1_FORTE_QUANDO_GOSTA",
+      "funnel_stage": "cold_identification",
+      "primary_format": "vertical_video_15_25s",
+      "support_formats": ["feed_1080x1350", "story_1080x1920", "reels_cover_1080x1920"],
+      "hook": "Você é forte até começar a gostar?",
+      "headline": "Recupere seu centro sem virar uma mulher fria",
+      "cta": "Saiba mais",
+      "utm": "?utm_source=meta&utm_medium=paid_social&utm_campaign=magnetus_feminino_frio&utm_content=F1_FORTE_QUANDO_GOSTA"
+    },
+    {
+      "id": "F2_DEPENDENCIA_DE_SINAL",
+      "funnel_stage": "cold_mechanism",
+      "primary_format": "carousel_6_cards_1080x1350",
+      "support_formats": ["feed_1080x1350"],
+      "hook": "O silêncio dele não deveria comandar o seu dia.",
+      "headline": "Pare de entregar sua paz aos sinais de outra pessoa",
+      "cta": "Saiba mais",
+      "utm": "?utm_source=meta&utm_medium=paid_social&utm_campaign=magnetus_feminino_frio&utm_content=F2_DEPENDENCIA_DE_SINAL"
+    },
+    {
+      "id": "F3_SEM_VIRAR_FRIA",
+      "funnel_stage": "warm_objection",
+      "primary_format": "talking_head_video_20_30s",
+      "support_formats": ["feed_1080x1350", "story_1080x1920", "reels_cover_1080x1920"],
+      "hook": "Não é parar de sentir. É parar de se abandonar.",
+      "headline": "Sinta sem se abandonar",
+      "cta": "Conheça o protocolo",
+      "utm": "?utm_source=meta&utm_medium=paid_social&utm_campaign=magnetus_feminino_morno&utm_content=F3_SEM_VIRAR_FRIA"
+    }
+  ],
+  "export_url": "/ads/etapa-1-3/"
+}
